@@ -1,0 +1,33 @@
+
+x
+java:S1192<"]Define a constant instead of duplicating this literal "Error en tiempo de respuesta" 6 times.(¦›³üÿÿÿÿ
+u
+java:S1192ƒ"^Define a constant instead of duplicating this literal "Se ingresa la serie y el plan" 4 times.(Ü¶°‚
+‡
+java:S1192Š"kDefine a constant instead of duplicating this literal "No muestra formulario de cÃ³digo de barras" 4 times.(’Ä¿„üÿÿÿÿ
+y
+java:S1192;"^Define a constant instead of duplicating this literal "Error en tiempo de respuesta " 6 times.(Ë’Ÿ¢ıÿÿÿÿ
+[	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(ê‚¸¾
+g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(©Ú¾Éùÿÿÿÿ
+@
+java:S54111"*Use the primitive boolean expression here.(ØÉéæ
+?
+java:S5411D"*Use the primitive boolean expression here.(¥–©z
+E
+java:S5411]"*Use the primitive boolean expression here.(ÇßîŒüÿÿÿÿ
+@
+java:S5411}"*Use the primitive boolean expression here.(ğà°æ
+F
+java:S5411š"*Use the primitive boolean expression here.(ÇßîŒüÿÿÿÿ
+F
+java:S5411¶"*Use the primitive boolean expression here.(†çÜÛıÿÿÿÿ
+r	java:S116%"]Rename this field "GET_TIPO_DOCUMENTO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë¿óœ
+r	java:S116&"XRename this field "GET_DOCUMENTO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(é¥™²üÿÿÿÿ
+q	java:S116'"WRename this field "GET_TELEFONO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Óƒêïûÿÿÿÿ
+o	java:S116("URename this field "GET_CORREO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ç¡¸İúÿÿÿÿ
+n	java:S116)"TRename this field "GET_SERIE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°ŒæŒûÿÿÿÿ
+m	java:S116*"SRename this field "GET_PLAN" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ºñäàÿÿÿÿÿ
+m	java:S116+"XRename this field "GET_DIRECCION" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¿¤Œ
+9
+java:S3010 "#Remove this assignment of "driver".(ğÈÀ
+V	java:S125b"<This block of commented-out lines of code should be removed.(†¸É‰ùÿÿÿÿ

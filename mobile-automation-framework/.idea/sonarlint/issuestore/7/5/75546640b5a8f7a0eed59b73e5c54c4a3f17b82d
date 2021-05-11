@@ -1,0 +1,40 @@
+
+}
+java:S1192Å"fDefine a constant instead of duplicating this literal "Se ingresa serie y numero de telefono" 4 times.(ßõ¨
+x
+java:S1192D"]Define a constant instead of duplicating this literal "Error en tiempo de respuesta" 5 times.(¦›³üÿÿÿÿ
+b
+java:S1192Â"FDefine a constant instead of duplicating this literal "xpath" 4 times.(ÊªÚúÿÿÿÿ
+y
+java:S1192C"^Define a constant instead of duplicating this literal "Error en tiempo de respuesta " 5 times.(Ë’Ÿ¢ıÿÿÿÿ
+`	java:S112!"FDefine and throw a dedicated exception instead of using a generic one.(Á¶è‹ÿÿÿÿÿ
+a	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ÙğÀR
+@
+java:S54115"*Use the primitive boolean expression here.(ØÉéæ
+?
+java:S5411M"*Use the primitive boolean expression here.(¥–©z
+E
+java:S5411f"*Use the primitive boolean expression here.(Ğõóëúÿÿÿÿ
+F
+java:S5411¶"*Use the primitive boolean expression here.(³ÍÉ¬ûÿÿÿÿ
+F
+java:S5411»"*Use the primitive boolean expression here.(‰ì­Èúÿÿÿÿ
+@
+java:S5411ê"*Use the primitive boolean expression here.(¥–©z
+F
+java:S5411ğ"*Use the primitive boolean expression here.(†çÜÛıÿÿÿÿ
+r	java:S116'"]Rename this field "GET_TIPO_DOCUMENTO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë¿óœ
+r	java:S116("XRename this field "GET_DOCUMENTO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(é¥™²üÿÿÿÿ
+q	java:S116)"WRename this field "GET_TELEFONO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Óƒêïûÿÿÿÿ
+l	java:S116*"WRename this field "GET_OPERADOR" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨ºè
+s	java:S116+"^Rename this field "GET_PRODUCTO_ACTUAL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ıı¬¤
+o	java:S116,"URename this field "GET_CORREO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ç¡¸İúÿÿÿÿ
+n	java:S116-"TRename this field "GET_SERIE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°ŒæŒûÿÿÿÿ
+r	java:S116."]Rename this field "GET_NUEVO_TELEFONO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÒÆ‘˜
+m	java:S116/"SRename this field "GET_PLAN" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ºñäàÿÿÿÿÿ
+9
+java:S3010""#Remove this assignment of "driver".(ğÈÀ
+V	java:S125k"<This block of commented-out lines of code should be removed.(†¸É‰ùÿÿÿÿ
+Q	java:S125n"<This block of commented-out lines of code should be removed.(Ü‚
+R	java:S125ˆ"<This block of commented-out lines of code should be removed.(Ëªá
+W	java:S125İ"<This block of commented-out lines of code should be removed.(éØ»Úûÿÿÿÿ

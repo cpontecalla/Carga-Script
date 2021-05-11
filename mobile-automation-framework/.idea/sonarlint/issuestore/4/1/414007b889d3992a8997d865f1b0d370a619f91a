@@ -1,0 +1,98 @@
+
+u
+java:S1192>"_Define a constant instead of duplicating this literal "No se encontro el elemento : " 10 times.(ÖÇ¿º
+7	java:S131!""Add a default case to this switch.(Ä‰åé
+a	java:S112ê"FDefine and throw a dedicated exception instead of using a generic one.(ŸãÖñşÿÿÿÿ
+A
+java:S1181‡"%Catch Exception instead of Throwable.(•”ø¾øÿÿÿÿ
+7	java:S131q""Add a default case to this switch.(Ä‰åé
+O	java:S106î"9Replace this use of System.out or System.err by a logger.(Ú¡Ú
+Z
+java:S1155">Use isEmpty() to check whether the collection is empty or not.(¶­²ùÿÿÿÿ
+Q	java:S125Ï"<This block of commented-out lines of code should be removed.(ÄØÍz
+b
+java:S1128	"GRemove this unused import 'io.appium.java_client.PerformsTouchActions'.(İŒÊşÿÿÿÿ
+A
+java:S1181ş"%Catch Exception instead of Throwable.(•”ø¾øÿÿÿÿ
+O	java:S106Á"9Replace this use of System.out or System.err by a logger.(Ú¡Ú
+7	java:S131I""Add a default case to this switch.(Ä‰åé
+A
+java:S1181í"%Catch Exception instead of Throwable.(•”ø¾øÿÿÿÿ
+A
+java:S1181ö"%Catch Exception instead of Throwable.(•”ø¾øÿÿÿÿ
+O	java:S106å"9Replace this use of System.out or System.err by a logger.(Ú¡Ú
+_
+java:S2259º"HA "NullPointerException" could be thrown; "webElement" is nullable here.(Ò·ˆá
+J
+java:S1128"/Remove this unused import 'java.time.Duration'.(ëá¯‰üÿÿÿÿ
+e
+java:S1192/"JDefine a constant instead of duplicating this literal "linktext" 10 times.(ÉÓïğøÿÿÿÿ
+A
+java:S1181 "%Catch Exception instead of Throwable.(•”ø¾øÿÿÿÿ
+Z
+java:S1155">Use isEmpty() to check whether the collection is empty or not.( Çæåûÿÿÿÿ
+@
+java:S11818"%Catch Exception instead of Throwable.(•”ø¾øÿÿÿÿ
+8	java:S131Ï""Add a default case to this switch.(Ä‰åé
+a	java:S112ó"FDefine and throw a dedicated exception instead of using a generic one.(¿ç°°ûÿÿÿÿ
+U
+java:S1128"?Remove this unused import 'io.appium.java_client.AppiumDriver'.(òš‹­
+b
+java:S2142û"FEither re-interrupt this method or rethrow the "InterruptedException".(®ûºöÿÿÿÿÿ
+q
+java:S1192°"ZDefine a constant instead of duplicating this literal "document.getElementById('" 3 times.(ƒŒÊ
+A
+java:S1181À"%Catch Exception instead of Throwable.(•”ø¾øÿÿÿÿ
+\	java:S112½"FDefine and throw a dedicated exception instead of using a generic one.(Ü„®Ç
+a
+java:S1128"KRemove this unused import 'io.appium.java_client.touch.offset.PointOption'.(£ÿÙÂ
+R	java:S125Ø"<This block of commented-out lines of code should be removed.(Ä×Æƒ
+O	java:S106÷"9Replace this use of System.out or System.err by a logger.(Ú¡Ú
+A
+java:S1181"%Catch Exception instead of Throwable.(•”ø¾øÿÿÿÿ
+z
+java:S1192:"_Define a constant instead of duplicating this literal "No se encontrÃ³ el elemento : " 8 times.(ÜñÛşÿÿÿÿ
+F
+java:S3740½"/Provide the parametrized type for this generic.(Ü„®Ç
+[
+java:S2259¡"DA "NullPointerException" could be thrown; "select" is nullable here.(áÑ¶ÿ
+Z
+java:S1128"DRemove this unused import 'io.appium.java_client.touch.WaitOptions'.(²É®á
+Q	java:S125ü"<This block of commented-out lines of code should be removed.(­®ª*
+T
+java:S1155–">Use isEmpty() to check whether the collection is empty or not.(îÁã(
+A
+java:S1181¼"%Catch Exception instead of Throwable.(•”ø¾øÿÿÿÿ
+O	java:S106°"9Replace this use of System.out or System.err by a logger.(ƒŒÊ
+^
+java:S2259ü"HA "NullPointerException" could be thrown; "webElement" is nullable here.(Éœ¦
+L
+java:S3984¸"5Throw this exception or remove this useless statement(ÄùÔ
+O	java:S106Ê"9Replace this use of System.out or System.err by a logger.(Ú¡Ú
+[	java:S112Æ"FDefine and throw a dedicated exception instead of using a generic one.(¢¤A
+T
+java:S1128
+">Remove this unused import 'io.appium.java_client.TouchAction'.( èæ¤
+8
+java:S1643À"Use a StringBuilder instead.(¼’°Úùÿÿÿÿ
+D	java:S108û")Either remove or fill this block of code.(®ûºöÿÿÿÿÿ
+@
+java:S1181`"%Catch Exception instead of Throwable.(•”ø¾øÿÿÿÿ
+d
+java:S2259Û"HA "NullPointerException" could be thrown; "webElement" is nullable here.(®Å¥¼øÿÿÿÿ
+U
+java:S1155Š">Use isEmpty() to check whether the collection is empty or not.(’¢è
+b
+java:S11923"GDefine a constant instead of duplicating this literal "xpath" 10 times.(æÀ¬ÿüÿÿÿÿ
+U
+java:S1155“">Use isEmpty() to check whether the collection is empty or not.(‰¸í
+A
+java:S1181É"%Catch Exception instead of Throwable.(•”ø¾øÿÿÿÿ
+_
+java:S2259"HA "NullPointerException" could be thrown; "webElement" is nullable here.(Öù®Ó
+A
+java:S1181›"%Catch Exception instead of Throwable.(•”ø¾øÿÿÿÿ
+5
+java:S2119ñ"Save and re-use this "Random".(¡Å”¦
+A
+java:S1181Ü"%Catch Exception instead of Throwable.(•”ø¾øÿÿÿÿ

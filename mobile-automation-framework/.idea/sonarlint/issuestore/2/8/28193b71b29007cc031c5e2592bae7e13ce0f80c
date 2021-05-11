@@ -1,0 +1,46 @@
+
+U	java:S106U"9Replace this use of System.out or System.err by a logger.(Õ™ª¶8Šíµã.
+Z	java:S106g"9Replace this use of System.out or System.err by a logger.(»Ğ§ùÿÿÿÿ8åÕ¶ã.
+U	java:S106M"9Replace this use of System.out or System.err by a logger.(ŞİÑ›8Ş´ã.
+U	java:S106n"9Replace this use of System.out or System.err by a logger.(£¥¨ê8Â±·ã.
+Z	java:S106F"9Replace this use of System.out or System.err by a logger.(¤Š­ƒûÿÿÿÿ8ùè³ã.
+b
+java:S1192¥"FDefine a constant instead of duplicating this literal "xpath" 4 times.(ÊªÚúÿÿÿÿ
+y
+java:S1192:"^Define a constant instead of duplicating this literal "Error en tiempo de respuesta " 6 times.(Ë’Ÿ¢ıÿÿÿÿ
+x
+java:S1192;"]Define a constant instead of duplicating this literal "Error en tiempo de respuesta" 6 times.(¦›³üÿÿÿÿ
+‡
+java:S1192"kDefine a constant instead of duplicating this literal "No muestra formulario de cÃ³digo de barras" 4 times.(’Ä¿„üÿÿÿÿ
+w	java:S116)"]Rename this field "GET_COLUMN_PREPLAN" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(˜èçËıÿÿÿÿ
+A
+java:S5411 "*Use the primitive boolean expression here.(èÍñ
+z	java:S116*"`Rename this field "SELECT_TIPO_DOCUMENTO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤’úÚÿÿÿÿÿ
+T	java:S106…"9Replace this use of System.out or System.err by a logger.(õìğ×úÿÿÿÿ
+`	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(¨»…»ÿÿÿÿÿ
+l	java:S116("WRename this field "GET_TELEFONO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃÜØ
+9
+java:S3010"#Remove this assignment of "driver".(ğÈÀ
+E
+java:S5411`"*Use the primitive boolean expression here.(¯ˆ‹şüÿÿÿÿ
+n	java:S116%"TRename this field "GET_SERIE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°ŒæŒûÿÿÿÿ
+A
+java:S5411Õ"*Use the primitive boolean expression here.(èÍñ
+V	java:S125e"<This block of commented-out lines of code should be removed.(†¸É‰ùÿÿÿÿ
+Z	java:S1062"9Replace this use of System.out or System.err by a logger.(‡Ûñâüÿÿÿÿ8³­ã.
+A
+java:S5411"*Use the primitive boolean expression here.(ğà°æ
+F
+java:S5411ˆ"*Use the primitive boolean expression here.(Ü»×ÿÿÿÿÿ
+b	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ÁÚ‰
+@
+java:S54110"*Use the primitive boolean expression here.(ØÉéæ
+?
+java:S5411D"*Use the primitive boolean expression here.(¥–©z
+@
+java:S5411Î"*Use the primitive boolean expression here.(¥–©z
+V	java:S125b"<This block of commented-out lines of code should be removed.(ò©õˆÿÿÿÿÿ
+U	java:S106v"9Replace this use of System.out or System.err by a logger.(Õ™ª¶8ÔŠ¸ã.
+[	java:S106†"9Replace this use of System.out or System.err by a logger.(÷‹ßşÿÿÿÿ8ˆ€¹ã.
+r	java:S116&"]Rename this field "GET_TIPO_DOCUMENTO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë¿óœ
+r	java:S116'"XRename this field "GET_DOCUMENTO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(é¥™²üÿÿÿÿ

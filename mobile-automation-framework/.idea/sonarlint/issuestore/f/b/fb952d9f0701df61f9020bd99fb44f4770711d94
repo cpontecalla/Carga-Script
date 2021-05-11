@@ -1,0 +1,44 @@
+
+j	java:S116+"URename this field "GET_CUADRA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Â™Õ‘
+j	java:S116."VRename this field "GET_MANZANA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•­•0
+…
+java:S1192"jDefine a constant instead of duplicating this literal "No se muestra el formulario de productos " 6 times.(°—ÍÉüÿÿÿÿ
+E
+java:S54114"*Use the primitive boolean expression here.(ØšÒöıÿÿÿÿ
+G
+java:S1068/",Remove this unused "GET_LOTE" private field.(Üş­óüÿÿÿÿ
+9
+java:S3010""#Remove this assignment of "driver".(Ú‚¿
+M
+java:S1068,"2Remove this unused "GET_NRO_PUERTA" private field.(ÆèÉñÿÿÿÿÿ
+s	java:S116,"YRename this field "GET_NRO_PUERTA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÆèÉñÿÿÿÿÿ
+\
+java:S1192l"FDefine a constant instead of duplicating this literal "xpath" 5 times.(¤½²º
+g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(êˆ„¯ûÿÿÿÿ
+u
+java:S1192Š"^Define a constant instead of duplicating this literal "Muestra detalles del servicio" 4 times.(ê‚Ö¬
+t	java:S116-"ZRename this field "GET_NOMBRE_CCHH" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ØÒ•ìşÿÿÿÿ
+m	java:S116/"SRename this field "GET_LOTE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Üş­óüÿÿÿÿ
+n	java:S116*"YRename this field "GET_NOMBRE_VIA" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(à†ŠÑ
+E
+java:S5411M"*Use the primitive boolean expression here.(Ôøßçüÿÿÿÿ
+F
+java:S5411¢"*Use the primitive boolean expression here.(¬ışÿÿÿÿ
+H
+java:S1068*"2Remove this unused "GET_NOMBRE_VIA" private field.(à†ŠÑ
+D
+java:S1068+".Remove this unused "GET_CUADRA" private field.(Â™Õ‘
+[	java:S112!"FDefine and throw a dedicated exception instead of using a generic one.(‘à ¢
+F
+java:S5411ˆ"*Use the primitive boolean expression here.(¬ışÿÿÿÿ
+x
+java:S1192’"aDefine a constant instead of duplicating this literal "No muestra detalles del servicio" 4 times.(¹¬”â
+k	java:S117k"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ú§ÓÇûÿÿÿÿ
+r	java:S116("XRename this field "GET_DOCUMENTO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Îø˜Úûÿÿÿÿ
+p	java:S116)"VRename this field "GET_CELULAR" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¾òúşÿÿÿÿ
+N
+java:S1068-"3Remove this unused "GET_NOMBRE_CCHH" private field.(ØÒ•ìşÿÿÿÿ
+D
+java:S1068."/Remove this unused "GET_MANZANA" private field.(•­•0
+@
+java:S5411l"*Use the primitive boolean expression here.(¤½²º

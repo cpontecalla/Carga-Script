@@ -1,0 +1,46 @@
+
+e
+java:S4042ˆ"NUse "java.nio.file.Files#delete" here for better messages on error conditions.(şÏ—Ñ
+o
+java:S1104"TMake document a static final constant or non-public and provide accessors if needed.(€ÍÏ©ùÿÿÿÿ
+L
+java:S26962"6Make the enclosing method "static" or remove this set.(ÔÂ®ë
+q
+java:S1104"\Make fileOutputStream a static final constant or non-public and provide accessors if needed.(¬ÖØ4
+L
+java:S2696("6Make the enclosing method "static" or remove this set.(ÄÙĞ©
+Q
+java:S2696*"6Make the enclosing method "static" or remove this set.(ºÀğãşÿÿÿÿ
+h
+java:S2095k"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(Ğ‰ûÍÿÿÿÿÿ
+?
+java:S1444")Make this "public static run" field final(÷ŒäÑ
+Q	java:S899ˆ";Do something with the "boolean" value returned by "delete".(şÏ—Ñ
+Q
+java:S2696,"6Make the enclosing method "static" or remove this set.(°‰¿¼üÿÿÿÿ
+i
+java:S2095N"NUse try-with-resources or close this "FileOutputStream" in a "finally" clause.(‘Éù·øÿÿÿÿ
+K
+java:S1444"6Make this "public static fileOutputStream" field final(¬ÖØ4
+I
+java:S1444".Make this "public static document" field final(€ÍÏ©ùÿÿÿÿ
+e
+java:S1192“"ODefine a constant instead of duplicating this literal "America/Bogota" 3 times.(¢Îl
+J
+java:S1444"/Make this "public static paragraph" field final(Ù¼âÿøÿÿÿÿ
+W
+java:S1075"ARefactor your code to get this URI from a customizable parameter.(øÚÿÏ
+\
+java:S1124£"EReorder the modifiers to comply with the Java Language Specification.(—Ò¦Á
+c
+java:S20954"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(³ªºş
+e
+java:S1104"OMake run a static final constant or non-public and provide accessors if needed.(÷ŒäÑ
+c
+java:S2095L"MUse try-with-resources or close this "FileInputStream" in a "finally" clause.(ìÏÈó
+a
+java:S1124"EReorder the modifiers to comply with the Java Language Specification.(Åë÷¡ùÿÿÿÿ
+\
+java:S1124™"EReorder the modifiers to comply with the Java Language Specification.(– Ãê
+p
+java:S1104"UMake paragraph a static final constant or non-public and provide accessors if needed.(Ù¼âÿøÿÿÿÿ

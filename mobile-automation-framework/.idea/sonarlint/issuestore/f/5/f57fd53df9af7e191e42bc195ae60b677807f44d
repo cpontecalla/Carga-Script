@@ -1,0 +1,72 @@
+
+a
+java:S1155Œ">Use isEmpty() to check whether the collection is empty or not.(í“Ô­ùÿÿÿÿ8õÎýþâ.
+i	java:S1165"TRename this field "GET_EMAIL" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¥ô·º
+ª
+java:S1192u"ŒDefine a constant instead of duplicating this literal "Muestra formulario de Datos del cliente y se da clic en el botÃ³n Chip solo" 4 times.(È¤Òò8õÎýþâ.
+]
+java:S1128";Remove this unused import 'org.openqa.selenium.WebElement'.(‰ïµ”þÿÿÿÿ8ŸÌÓþâ.
+E
+java:S5411n"*Use the primitive boolean expression here.(¯ˆ‹þüÿÿÿÿ
+W
+java:S1128":Remove this unused import 'org.openqa.selenium.WebDriver'.(ñšÿÀ8–È¯Öâ.
+[	java:S106±"9Replace this use of System.out or System.err by a logger.(Ó•ò®üÿÿÿÿ8õÎýþâ.
+[	java:S106‚"9Replace this use of System.out or System.err by a logger.(¶§É¬ûÿÿÿÿ8õÎýþâ.
+p
+java:S1128"NRemove this unused import 'org.openqa.selenium.support.ui.ExpectedConditions'.(û€Èéúÿÿÿÿ8´—ÓÕâ.
+h	java:S1168"SRename this field "GET_PLAN" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆÕåÆ
+^	java:S125Â"<This block of commented-out lines of code should be removed.(Ä•áüÿÿÿÿ8©™·€ã.
+`	java:S1120"FDefine and throw a dedicated exception instead of using a generic one.(‰É¸éúÿÿÿÿ
+z	java:S116:"`Rename this field "SELECT_TIPO_DOCUMENTO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¤’úÚÿÿÿÿÿ
+h
+java:S1192}"FDefine a constant instead of duplicating this literal "xpath" 4 times.(€‚Æ¥ýÿÿÿÿ8õÎýþâ.
+@
+java:S5411A"*Use the primitive boolean expression here.(ØÉéæ
+m	java:S1164"XRename this field "GET_DOCUMENTO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(á¨Žê
+W
+java:S1128":Remove this unused import 'java.util.concurrent.TimeUnit'.(Æ™þ8–È¯Öâ.
+S	java:S106V"9Replace this use of System.out or System.err by a logger.(Ú©ï‰úÿÿÿÿ
+m	java:S1169"XRename this field "GET_DIRECCION" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Òàý¿
+U
+java:S1128"8Remove this unused import 'java.util.function.Function'.(»³Íž8–È¯Öâ.
+Y	java:S125Ü"<This block of commented-out lines of code should be removed.(ºØ‚8õÎýþâ.
+n	java:S1166"TRename this field "GET_SERIE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ãê²µøÿÿÿÿ
+X
+java:S1141‹"5Extract this nested try block into a separate method.(¡»¢üùÿÿÿÿ8õÎýþâ.
+_
+java:S1128"=Remove this unused import 'java.util.NoSuchElementException'.(®“ÿéúÿÿÿÿ8–È¯Öâ.
+f
+java:S1128"IRemove this unused import 'org.openqa.selenium.support.ui.WebDriverWait'.(¥÷ó8´—ÓÕâ.
+K
+java:S1128".Remove this unused import 'org.testng.Assert'.(Ø£ÿ§8îë£Õâ.
+c
+java:S1128"FRemove this unused import 'org.openqa.selenium.support.ui.FluentWait'.(Æ÷·Ü8–È¯Öâ.
+U	java:S106•"9Replace this use of System.out or System.err by a logger.(¨¡ÌW8õÎýþâ.
+[	java:S106‘"9Replace this use of System.out or System.err by a logger.(›íØÁûÿÿÿÿ8õÎýþâ.
+g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ú²æÑûÿÿÿÿ
+H
+java:S5411­"*Use the primitive boolean expression here.(ðà°æ8õÎýþâ.
+^	java:S125¶"<This block of commented-out lines of code should be removed.(€×äþÿÿÿÿ8îâúÈä.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(Â’’„ÿÿÿÿÿ8õÎýþâ.
+P
+java:S22091"5Change this instance-reference to a static reference.(—Ëöæýÿÿÿÿ
+Y	java:S125½"<This block of commented-out lines of code should be removed.(¢‰ïß8‹ãÐÿâ.
+Z	java:S106t"9Replace this use of System.out or System.err by a logger.(¶§É¬ûÿÿÿÿ8·çüþâ.
+M
+java:S5411"*Use the primitive boolean expression here.(ŒùÓòþÿÿÿÿ8õÎýþâ.
+r	java:S1163"]Rename this field "GET_TIPO_DOCUMENTO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë¿óœ
+l	java:S1167"WRename this field "GET_TELEFONO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ÃÜØž
+G
+java:S5411Þ"*Use the primitive boolean expression here.(¥–©z8õÎýþâ.
+p	java:S116;"VRename this field "SELECT_PLAN" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ó±É¾ÿÿÿÿÿ
+y
+java:S1192J"^Define a constant instead of duplicating this literal "Error en tiempo de respuesta " 5 times.(Ë’Ÿ¢ýÿÿÿÿ
+?
+java:S5411T"*Use the primitive boolean expression here.(¥–©z
+x
+java:S1192K"]Define a constant instead of duplicating this literal "Error en tiempo de respuesta" 5 times.(¦›³üÿÿÿÿ
+V	java:S106À"9Replace this use of System.out or System.err by a logger.(Œú“š8àÆ¥€ã.
+>
+java:S30101"#Remove this assignment of "driver".(—Ëöæýÿÿÿÿ
+b
+java:S1128"@Remove this unused import 'org.openqa.selenium.support.ui.Wait'.(‹ÇÓ™ùÿÿÿÿ8–È¯Öâ.

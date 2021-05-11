@@ -1,0 +1,149 @@
+Máquina: DESKTOP-0I60SNH/192.168.56.1
+Usuario OS: HP
+OS: Windows 10
+Nombre de JVM: 25.131-b11
+Memoria máxima en JVM: 518979
+
+Fecha  y Hora,Nivel de la bitácora,Mensaje,Nombre de la categoría,Nombre de la clase de origen,Nombre del método original,Seguimiento de pila
+2021/02/19 12:14:10:808,SEVERE,FileNotFoundException Excepton = java.io.FileNotFoundException: C:\users\jagurtos\citrix.txt (El sistema no puede encontrar la ruta especificada),com.amdocs.uif,com.amdocs.uif.workspace.WorkspaceHandler,convertLogRecord2AmdocsLogRecord,
+2021/02/19 12:14:40:769,SEVERE,"** Parameters passed to Minifront for Customer Authorization = {SalesChannel=CEC, Action=CW, DocumentID=1314151617, DocumentType=3, UserLogin=jagurtos}",com.amdocs.uif,com.amdocs.uif.workspace.WorkspaceHandler,convertLogRecord2AmdocsLogRecord,
+2021/02/19 12:14:40:830,SEVERE,"** Parameters passed to Minifront for Customer Authorization = {SalesChannel=CEC, Action=CW, DocumentID=1314151617, DocumentType=3, UserLogin=jagurtos}",com.amdocs.uif,com.amdocs.uif.workspace.WorkspaceHandler,convertLogRecord2AmdocsLogRecord,
+2021/02/19 12:15:12:315,SEVERE,Acknowledgement Recieved from MiniFront ,com.amdocs.uif,com.amdocs.uif.workspace.WorkspaceHandler,convertLogRecord2AmdocsLogRecord,
+2021/02/19 12:15:12:315,SEVERE,"com.crmimpl.minifront.util.XMinifrontPageCustomerAuth message_CRMCustomerAuthenticationResponce: {""SuccessFlag"":""0"",""ErrorCode"":"""",""ErrorDescription"":"""",""ScoreID"":""S42102190005840"",""Limitecredito"":""0000000000060"",""Commitments"":""1"",""Portability"":{""PortabilityIndication"":""0"",""MotPorta"":"""",""MSISDN"":"""",""PreviousConsultationNumber"":"""",""DonorActivationDate"":"""",""DonorOperator"":"""",""DonorPlanType"":"""",""Montodeuda"":"""",""ErrorPorta"":"""",""MSJPorta"":""""},""CoverageCode"":""1501010001"",""CoverageIndication"":""1"",""NoCentroPoblado"":""1"",""Token"":""20210219014905""}",com.amdocs.uif,com.amdocs.uif.workspace.WorkspaceHandler,convertLogRecord2AmdocsLogRecord,
+2021/02/19 12:16:40:808,SEVERE,Se ha producido un error interno,com.amdocs.uif,com.amdocs.uif.workspace.RuntimeContext$2,uncaughtException,"com.amdocs.uif.common.UifRuntimeException: No se pudo iniciar el siguiente formulario
+Nombre del formulario: com.amdocs.oms.order.OrderingFramework -> com.amdocs.oms.activities.NegotiateProductConfiguration
+Nombre de la acción: getNextStep
+Nombre del control: btnNextStep
+Id de backend: Ordering
+Nombre de la operación: com.amdocs.cih.services.oms.interfaces.IOmsServices.getNextStep
+	at com.amdocs.uif.action.ActionUtilInfra.raiseError(ActionUtilInfra.java:141)
+	at com.amdocs.uif.action.ServiceDrivenUiActionInfra$LaunchActionListener.actionFailed(ServiceDrivenUiActionInfra.java:372)
+	at com.amdocs.uif.action.ActionInfra.fireActionFailed(ActionInfra.java:674)
+	at com.amdocs.uif.action.LaunchActionInfra.fireLaunchActionFailed(LaunchActionInfra.java:577)
+	at com.amdocs.uif.action.LaunchActionInfra.execute(LaunchActionInfra.java:288)
+	at com.amdocs.uif.action.ActionInfra.executeAction(ActionInfra.java:456)
+	at com.amdocs.uif.action.ActionInfra.execute(ActionInfra.java:388)
+	at com.amdocs.uif.action.ServiceDrivenUiActionInfra.executeAction(ServiceDrivenUiActionInfra.java:1010)
+	at com.amdocs.uif.action.ServiceDrivenUiActionInfra.openLogicalForm(ServiceDrivenUiActionInfra.java:713)
+	at com.amdocs.uif.action.ServiceDrivenUiActionInfra.parseUiDescriptor(ServiceDrivenUiActionInfra.java:653)
+	at com.amdocs.uif.action.ServiceDrivenUiActionInfra.doPostDataSubmit(ServiceDrivenUiActionInfra.java:608)
+	at com.amdocs.uif.action.SubmitActionInfra$1.done(SubmitActionInfra.java:514)
+	at com.amdocs.uif.workspace.UifTask$2$1.run(UifTask.java:104)
+	at java.awt.event.InvocationEvent.dispatch(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+Caused by: com.amdocs.uif.common.UifRuntimeException: No se pudo abrir el subformulario debido a un error interno
+Nombre del formulario: com.amdocs.oms.activities.NegotiateProductConfiguration
+	at com.amdocs.uif.workspace.Workspace.getException(Workspace.java:4564)
+	at com.amdocs.uif.workspace.Workspace.openSubForm(Workspace.java:1735)
+	at com.amdocs.uif.action.LaunchActionInfra.launchForm(LaunchActionInfra.java:799)
+	at com.amdocs.uif.action.LaunchActionInfra.executeFormLaunch(LaunchActionInfra.java:390)
+	at com.amdocs.uif.action.LaunchActionInfra.execute(LaunchActionInfra.java:276)
+	... 22 more
+Caused by: com.amdocs.uif.common.UifRuntimeException: El formulario no se puede abrir debido a un error interno
+Nombre del formulario: com.amdocs.oms.cust.activities.NegotiateProductConfigurationImpl
+	at com.amdocs.uif.workspace.Workspace.getException(Workspace.java:4564)
+	at com.amdocs.uif.workspace.Workspace.open(Workspace.java:1667)
+	at com.amdocs.uif.workspace.Workspace.openSubForm(Workspace.java:1725)
+	... 25 more
+Caused by: com.amdocs.uif.common.UifRuntimeException: Error inesperado en el Controlador / Administrador de eventos
+Nombre del formulario: com.amdocs.oms.activities.NegotiateProductConfiguration
+Nombre del método.: form_PreLoad
+	at com.amdocs.uif.workspace.FormBuilder.invokeEventHandlerMethod(FormBuilder.java:1284)
+	at com.amdocs.uif.workspace.UifForm.setLoading(UifForm.java:4367)
+	at com.amdocs.uif.workspace.FormBuilder.initialize(FormBuilder.java:638)
+	at com.amdocs.uif.workspace.Workspace.open(Workspace.java:1618)
+	... 26 more
+Caused by: java.lang.NullPointerException
+	at com.amdocs.oms.activities.NegotiateProductConfiguration.form_PreLoad(NegotiateProductConfiguration.java:275)
+	at com.amdocs.oms.cust.activities.NegotiateProductConfigurationImpl.form_PreLoad(NegotiateProductConfigurationImpl.java:90)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.amdocs.uif.workspace.FormBuilder.invokeEventHandler(FormBuilder.java:1304)
+	at com.amdocs.uif.workspace.FormBuilder.invokeEventHandlerMethod(FormBuilder.java:1264)
+	... 29 more
+"
+2021/02/19 12:16:41:398,SEVERE,Se ha producido un error interno,com.amdocs.uif,com.amdocs.uif.workspace.RuntimeContext$2,uncaughtException,"com.amdocs.uif.common.UifRuntimeException: No se pudo abrir el subformulario debido a un error interno
+Nombre del formulario: com.amdocs.oms.activities.AllocateResourcesContained
+	at com.amdocs.uif.workspace.Workspace.getException(Workspace.java:4564)
+	at com.amdocs.uif.workspace.Workspace.openSubForm(Workspace.java:1735)
+	at com.amdocs.uif.action.LaunchActionInfra.launchForm(LaunchActionInfra.java:799)
+	at com.amdocs.uif.action.LaunchActionInfra.executeFormLaunch(LaunchActionInfra.java:390)
+	at com.amdocs.uif.action.LaunchActionInfra.execute(LaunchActionInfra.java:276)
+	at com.amdocs.uif.action.ActionInfra.executeAction(ActionInfra.java:456)
+	at com.amdocs.uif.action.ActionInfra.execute(ActionInfra.java:388)
+	at com.amdocs.uif.action.SequenceActionInfra.iterateActions(SequenceActionInfra.java:177)
+	at com.amdocs.uif.action.SequenceActionInfra.access$300(SequenceActionInfra.java:34)
+	at com.amdocs.uif.action.SequenceActionInfra$SequenceActionListenerInfra.actionDone(SequenceActionInfra.java:276)
+	at com.amdocs.uif.action.ActionInfra.fireActionDone(ActionInfra.java:601)
+	at com.amdocs.uif.action.LaunchActionInfra.enableLaunchedForm(LaunchActionInfra.java:882)
+	at com.amdocs.uif.action.LaunchActionInfra$FormPropertyChangeListener.propertyChange(LaunchActionInfra.java:630)
+	at java.beans.PropertyChangeSupport.fire(Unknown Source)
+	at java.beans.PropertyChangeSupport.firePropertyChange(Unknown Source)
+	at java.beans.PropertyChangeSupport.firePropertyChange(Unknown Source)
+	at java.beans.PropertyChangeSupport.firePropertyChange(Unknown Source)
+	at com.amdocs.uif.workspace.UifForm.setOpened(UifForm.java:4216)
+	at com.amdocs.uif.workspace.FormBuilder$1InitialLoadActionListener$1.run(FormBuilder.java:799)
+	at java.awt.event.InvocationEvent.dispatch(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.WaitDispatchSupport$2.run(Unknown Source)
+	at java.awt.WaitDispatchSupport$4.run(Unknown Source)
+	at java.awt.WaitDispatchSupport$4.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.awt.WaitDispatchSupport.enter(Unknown Source)
+	at java.awt.Dialog.show(Unknown Source)
+	at java.awt.Component.show(Unknown Source)
+	at java.awt.Component.setVisible(Unknown Source)
+	at java.awt.Window.setVisible(Unknown Source)
+	at java.awt.Dialog.setVisible(Unknown Source)
+	at com.amdocs.uif.workspace.ExceptionPane.showExceptionDialog(ExceptionPane.java:473)
+	at com.amdocs.uif.workspace.MDIWorkspace$35.run(MDIWorkspace.java:6463)
+	at java.awt.event.InvocationEvent.dispatch(Unknown Source)
+	at java.awt.EventQueue.dispatchEventImpl(Unknown Source)
+	at java.awt.EventQueue.access$500(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.awt.EventQueue$3.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(Unknown Source)
+	at java.awt.EventQueue.dispatchEvent(Unknown Source)
+	at java.awt.EventDispatchThread.pumpOneEventForFilters(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForFilter(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEventsForHierarchy(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.pumpEvents(Unknown Source)
+	at java.awt.EventDispatchThread.run(Unknown Source)
+Caused by: com.amdocs.uif.common.UifRuntimeException: El formulario no se puede abrir debido a un error interno
+Nombre del formulario: com.amdocs.oms.peru.activities.AllocateResourcesContainedPE
+	at com.amdocs.uif.workspace.Workspace.getException(Workspace.java:4564)
+	at com.amdocs.uif.workspace.Workspace.open(Workspace.java:1667)
+	at com.amdocs.uif.workspace.Workspace.openSubForm(Workspace.java:1725)
+	... 54 more
+Caused by: com.amdocs.uif.common.UifRuntimeException: La ruta especificada no conduce a un modelo de datos válido.
+	at com.amdocs.uif.data.DatasetInfra.createVirtualDataModel(DatasetInfra.java:349)
+	at com.amdocs.oms.peru.activities.AllocateResourcesContainedPE_Builder.createDataModels(AllocateResourcesContainedPE_Builder.java:254)
+	at com.amdocs.uif.workspace.FormBuilder.initialize(FormBuilder.java:598)
+	at com.amdocs.uif.workspace.Workspace.open(Workspace.java:1618)
+	... 55 more
+"

@@ -1,0 +1,6 @@
+ExternalMassRequestID,MassRequestType,RequestDescription,RequestExecutionDate,RequestCreator,RequestCreationDate,NumberOfRequestLines,Date Format
+12494845,MassSwapDevice,Cambio de Simcard,7/01/2021,Tienda_Corp1,7/01/2021,1,dd/MM/yyyy
+SalesChannel,Reason,ServiceRequiredDate,ReservationID,ShippingAddressID,DeliveryMethod,ShipmentOption,NumberOfInstallments
+MS,CHSIS,7/01/2021,C210091825,123036786,Shipping,Regular,1
+RequestLineNumber,DeviceSKU,DeviceSerialNumber,ExternalLineID,SIMType,SIMCardNumber,MSISDN,RoboPlus,ReturnDevice,WaiveDevicePenaltyInd,Financing Indicator,Downpayment Amount,Plan Code
+1,,,,TSPE4128234R510201,,920956411,N,N,N,FALSE,0,TELEF003

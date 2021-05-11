@@ -1,0 +1,19 @@
+
+E
+java:S3740 "/Provide the parametrized type for this generic.(¼Ô›ô
+E
+java:S3740,"/Provide the parametrized type for this generic.(¼Ô›ô
+E
+java:S37409"/Provide the parametrized type for this generic.(¼Ô›ô
+E
+java:S3740E"/Provide the parametrized type for this generic.(¼Ô›ô
+g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ß²ç¥şÿÿÿÿ
+f	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë¯õŸ
+k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ƒÎ¹Ğûÿÿÿÿ
+k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(•µôÇıÿÿÿÿ
+k	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ºÅ›ûÿÿÿÿ
+b
+java:S1223"LRename this method to prevent any misunderstanding or make it a constructor.(Å¿‹
+U
+java:S1118":Add a private constructor to hide the implicit public one.(ß²ç¥şÿÿÿÿ
+<	java:S131""Add a default case to this switch.(Æóõµıÿÿÿÿ

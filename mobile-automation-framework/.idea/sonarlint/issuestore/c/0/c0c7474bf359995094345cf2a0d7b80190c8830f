@@ -1,0 +1,32 @@
+
+H
+java:S1068"-Remove this unused "sentencia" private field.(¨š‡¹ùÿÿÿÿ
+]
+java:S20955"GUse try-with-resources or close this "Statement" in a "finally" clause.(‚ÌÆË
+F
+java:S1128"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ
+S	java:S106"9Replace this use of System.out or System.err by a logger.(Ö¼¸‘üÿÿÿÿ
+^
+java:S2095"HUse try-with-resources or close this "Connection" in a "finally" clause.(ýÌ–¹
+I
+java:S1128".Remove this unused import 'java.util.HashMap'.(™˜”€ùÿÿÿÿ
+z
+java:S1128"dRemove this unused import 'cucumber.deps.com.thoughtworks.xstream.io.copy.HierarchicalStreamCopier'.(÷£øö
+S	java:S106""9Replace this use of System.out or System.err by a logger.(âñ„øûÿÿÿÿ
+V	java:S125("<This block of commented-out lines of code should be removed.(‰¹–Ôøÿÿÿÿ
+N	java:S106N"9Replace this use of System.out or System.err by a logger.(êó¨ž
+F
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ
+Q	java:S125:"<This block of commented-out lines of code should be removed.(ã·äÍ
+C
+java:S1068"-Remove this unused "resultado" private field.(ƒ©©
+U
+java:S1118":Add a private constructor to hide the implicit public one.(òî¼òøÿÿÿÿ
+N	java:S106"9Replace this use of System.out or System.err by a logger.(Ñ§þ³
+N	java:S106="9Replace this use of System.out or System.err by a logger.(ëŸÁ
+Y
+java:S2583"CChange this condition so that it does not always evaluate to "true"(¤òª£
+S	java:S106B"9Replace this use of System.out or System.err by a logger.(÷“‚ûÿÿÿÿ
+Q	java:S125?"<This block of commented-out lines of code should be removed.(…¶ü–
+H
+java:S4925"-Remove this "Class.forName()", it is useless.(õ†¨Äùÿÿÿÿ

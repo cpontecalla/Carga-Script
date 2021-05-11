@@ -1,0 +1,10 @@
+
+9
+java:S3010"#Remove this assignment of "driver".(ğÈÀ
+b	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ŸŸñ’
+y
+java:S11922"^Define a constant instead of duplicating this literal "Error en tiempo de respuesta " 3 times.(Ë’Ÿ¢ıÿÿÿÿ
+E
+java:S5411<"*Use the primitive boolean expression here.(ÇßîŒüÿÿÿÿ
+[	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(•Ïšİ
+g	java:S116!"RRename this field "GET_DNI" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(î‚Å¸

@@ -1,0 +1,93 @@
+
+W	java:S1256"<This block of commented-out lines of code should be removed.(»¦ı8€©€ã.
+{
+java:S1104#"YMake TXT_SERIECHIP a static final constant or non-public and provide accessors if needed.(Ÿ©…ÿûÿÿÿÿ8ÑíÁÓâ.
+Q
+java:S1444."6Make this "public static SELECT_DOCUMENTO" field final(©úÓÂúÿÿÿÿ
+x
+java:S3008:"VRename this field "TITLE_ERROR" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(‚˜ÅÚıÿÿÿÿ8šô€Õâ.
+n
+java:S11923"SUse already-defined constant 'BTN_CHIP_SOLO' instead of duplicating its value here.(›ÃÇôıÿÿÿÿ
+s
+java:S1104-"]Make LBL_DATOS_CLIENTE a static final constant or non-public and provide accessors if needed.(²öù¡
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(¬°¬â
+w
+java:S1104."\Make SELECT_DOCUMENTO a static final constant or non-public and provide accessors if needed.(©úÓÂúÿÿÿÿ
+o
+java:S11041"YMake TXT_DOCUMENTO a static final constant or non-public and provide accessors if needed.(ˆˆ¸£
+l
+java:S30085"VRename this field "SELECT_PLAN" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ø›Âã
+L
+java:S1444"6Make this "public static TXT_DNI_VENDEDOR" field final(×Õ¹÷
+q
+java:S3008"[Rename this field "TXT_DNI_VENDEDOR" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(×Õ¹÷
+Q
+java:S14449"/Make this "public static BTN_ERROR" field final(—Çõÿÿÿÿÿ8ş‘ñÊâ.
+y
+java:S11043"^Make BTN_CHIP_SOLO_POST a static final constant or non-public and provide accessors if needed.(›ÃÇôıÿÿÿÿ
+v
+java:S3008/"TRename this field "MSG_ERROR" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(åê¯ÿÿÿÿÿ8†şæ¢â.
+G
+java:S14445"1Make this "public static SELECT_PLAN" field final(ø›Âã
+f
+java:S1192"PUse already-defined constant 'POPUP_AUTH' instead of duplicating its value here.(Òš“×
+~
+java:S11044"cMake TXT_SERIE_ALTA_POSTPAGO a static final constant or non-public and provide accessors if needed.(çìãèşÿÿÿÿ
+m
+java:S11045"WMake SELECT_PLAN a static final constant or non-public and provide accessors if needed.(ø›Âã
+l
+java:S3008"VRename this field "POPUP_AUTH3" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Òš“×
+}
+java:S30084"bRename this field "TXT_SERIE_ALTA_POSTPAGO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(çìãèşÿÿÿÿ
+w
+java:S11049"UMake BTN_ERROR a static final constant or non-public and provide accessors if needed.(—Çõÿÿÿÿÿ8ş‘ñÊâ.
+S
+java:S14443"8Make this "public static BTN_CHIP_SOLO_POST" field final(›ÃÇôıÿÿÿÿ
+n
+java:S30081"XRename this field "TXT_DOCUMENTO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ˆˆ¸£
+X
+java:S14444"=Make this "public static TXT_SERIE_ALTA_POSTPAGO" field final(çìãèşÿÿÿÿ
+G
+java:S1444"1Make this "public static POPUP_AUTH3" field final(Òš“×
+
+java:S11929"_Use already-defined constant 'BTN_ACEPTAR_CONFIGURACION' instead of duplicating its value here.(—Çõÿÿÿÿÿ8ş‘ñÊâ.
+Q
+java:S1444/"/Make this "public static MSG_ERROR" field final(åê¯ÿÿÿÿÿ8†şæ¢â.
+r
+java:S3008-"\Rename this field "LBL_DATOS_CLIENTE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(²öù¡
+X	java:S125"<This block of commented-out lines of code should be removed.(§›ÑÁ8€©€ã.
+I
+java:S14441"3Make this "public static TXT_DOCUMENTO" field final(ˆˆ¸£
+U
+java:S1118":Add a private constructor to hide the implicit public one.(€èÁõúÿÿÿÿ
+i
+java:S1192."NUse already-defined constant 'CBX_PLAN' instead of duplicating its value here.(©úÓÂúÿÿÿÿ
+m
+java:S1104"WMake POPUP_AUTH3 a static final constant or non-public and provide accessors if needed.(Òš“×
+v
+java:S30089"TRename this field "BTN_ERROR" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—Çõÿÿÿÿÿ8ş‘ñÊâ.
+g	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(€èÁõúÿÿÿÿ
+U
+java:S1444#"3Make this "public static TXT_SERIECHIP" field final(Ÿ©…ÿûÿÿÿÿ8ÑíÁÓâ.
+S
+java:S1444:"1Make this "public static TITLE_ERROR" field final(‚˜ÅÚıÿÿÿÿ8šô€Õâ.
+z
+java:S3008#"XRename this field "TXT_SERIECHIP" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Ÿ©…ÿûÿÿÿÿ8ÑíÁÓâ.
+r
+java:S1104"\Make TXT_DNI_VENDEDOR a static final constant or non-public and provide accessors if needed.(×Õ¹÷
+M
+java:S1444-"7Make this "public static LBL_DATOS_CLIENTE" field final(²öù¡
+S
+java:S1128"8Remove this unused import 'org.omg.CORBA.PUBLIC_MEMBER'.(œŠÆÊÿÿÿÿÿ
+o
+java:S1192#"TUse already-defined constant 'TXT_SERIE_CHIP' instead of duplicating its value here.(Ÿ©…ÿûÿÿÿÿ
+x
+java:S30083"]Rename this field "BTN_CHIP_SOLO_POST" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›ÃÇôıÿÿÿÿ
+y
+java:S1104:"WMake TITLE_ERROR a static final constant or non-public and provide accessors if needed.(‚˜ÅÚıÿÿÿÿ8šô€Õâ.
+v
+java:S3008."[Rename this field "SELECT_DOCUMENTO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(©úÓÂúÿÿÿÿ
+n
+java:S1192-"XUse already-defined constant 'FORM_CONFIGURACION' instead of duplicating its value here.(²öù¡
+w
+java:S1104/"UMake MSG_ERROR a static final constant or non-public and provide accessors if needed.(åê¯ÿÿÿÿÿ8†şæ¢â.

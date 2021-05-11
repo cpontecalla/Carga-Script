@@ -1,0 +1,25 @@
+
+b	java:S101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(İÑÂ
+x
+java:S11927"]Define a constant instead of duplicating this literal "Error en tiempo de respuesta" 4 times.(¦›³üÿÿÿÿ
+?
+java:S5411?"*Use the primitive boolean expression here.(¥–©z
+E
+java:S5411X"*Use the primitive boolean expression here.(ÇßîŒüÿÿÿÿ
+@
+java:S5411u"*Use the primitive boolean expression here.(ğà°æ
+E
+java:S5411}"*Use the primitive boolean expression here.(†çÜÛıÿÿÿÿ
+r	java:S116$"XRename this field "GET_DOCUMENTO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(é¥™²üÿÿÿÿ
+@
+java:S5411,"*Use the primitive boolean expression here.(ØÉéæ
+M
+java:S1068"2Remove this unused "COLUMN_PREPLAN" private field.(±¾ĞÁüÿÿÿÿ
+r	java:S116#"]Rename this field "GET_TIPO_DOCUMENTO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ë¿óœ
+[	java:S112"FDefine and throw a dedicated exception instead of using a generic one.(ò¡¶¿
+9
+java:S3010"#Remove this assignment of "driver".(ğÈÀ
+q	java:S116%"WRename this field "GET_TELEFONO" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Óƒêïûÿÿÿÿ
+n	java:S116&"TRename this field "GET_SERIE" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°ŒæŒûÿÿÿÿ
+y
+java:S11926"^Define a constant instead of duplicating this literal "Error en tiempo de respuesta " 4 times.(Ë’Ÿ¢ıÿÿÿÿ
