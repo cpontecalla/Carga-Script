@@ -184,13 +184,9 @@ Sub Cambiar()
 		wait 1
 	Wend
 	
-	If DataTable("e_WIC_ValidaCli",dtLocalSheet)="SI" Then
-		RunAction "WIC", oneIteration
-	End If
-	
 	t = 0
-	While (JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Actualizar Atributos de_2").JavaList("Motivo:").Exist) = False
-		wait 1
+	While ((JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Actualizar Atributos de_2").JavaList("Motivo:").Exist) Or (JavaWindow("Ejecutivo de interacción").JavaDialog("Autenticación del Cliente").Exist)) = False
+		wait 1 
 		t = t + 1
 		If (t >= 180) Then
 			JavaWindow("Ejecutivo de interacción").CaptureBitmap RutaEvidencias() & "Actualizar_Accion_Orden_"&Num_Iter&".png", True
@@ -202,7 +198,25 @@ Sub Cambiar()
 			ExitActionIteration
 		End If
 	Wend
+	wait 1
+	If JavaWindow("Ejecutivo de interacción").JavaDialog("Autenticación del Cliente").Exist Then
+		RunAction "WIC", oneIteration
+	End If
 	
+	t = 0
+	While (JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Actualizar Atributos de_2").JavaList("Motivo:").Exist) = False
+		wait 1 
+		t = t + 1
+		If (t >= 180) Then
+			JavaWindow("Ejecutivo de interacción").CaptureBitmap RutaEvidencias() & "Actualizar_Accion_Orden_"&Num_Iter&".png", True
+			imagenToWord "Error_Actualizar_Accion_Orden_"&Num_Iter,RutaEvidencias() & "Actualizar_Accion_Orden_"&Num_Iter&".png"
+			DataTable("s_Resultado", dtLocalSheet) = "Fallido"
+			DataTable("s_Detalle", dtLocalSheet) = "No cargó la pantalla -Actualizar atributos de Acción de Orden- de manera correcta"
+			Reporter.ReportEvent micFail, DataTable("s_Resultado", dtLocalSheet), DataTable("s_Detalle", dtLocalSheet)
+			JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Buscar: Productos asignados").JavaButton("Cerrar").Click
+			ExitActionIteration
+		End If
+	Wend
 '	JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Actualizar Atributos de_2").JavaList("Motivo:").Select str_TipodeCambio
 	
 	Count = JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Actualizar Atributos de_2").JavaList("Motivo:").GetROProperty ("items count")
@@ -794,7 +808,7 @@ Sub InsertarDispositivo()
 				Wend
 				If JavaWindow("Ejecutivo de interacción").JavaDialog("Mensaje").Exist Then
 				Else 
-					wait 1
+					wait 3
 					If JavaWindow("Ejecutivo de interacción").JavaDialog("Negociar Configuración_2").JavaCheckBox("Seleccionar_3").Exist Then
 						JavaWindow("Ejecutivo de interacción").JavaDialog("Negociar Configuración_2").JavaCheckBox("Seleccionar_3").Set "ON"
 						wait 1
@@ -1555,7 +1569,7 @@ Sub GeneracionOrden()
 '			JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Orden 2272771A").JavaButton("Cerrar").Click
 '			wait 2	
 
-    
+    wait 1
     text = JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Orden 2272771A").GetROProperty("text")
     DataTable("s_Nro_Orden", dtLocalSheet) = RTRIM(LTRIM((replace(text,"Orden",""))))
     WAIT 1
@@ -1714,9 +1728,8 @@ Sub GestionLogistica()
 						End If
 					Wend
 					
-					vardisp=JavaWindow("Ejecutivo de interacción").JavaDialog("Buscar: Orden > Solicitar").JavaTable("SearchJTable").GetCellData (1,4)
-					If vardisp<>str_idDispositivo Then
-						If str_MotivoCambio="CAEQ_EQUIPO Y SIM" Then
+					Select Case str_MotivoCambio
+						Case "CAEQ_EQUIPO Y SIM"
 							JavaWindow("Ejecutivo de interacción").JavaDialog("Buscar: Orden > Solicitar").JavaTable("SearchJTable").DoubleClickCell "#1","#4"
 							Set shell = CreateObject("Wscript.Shell") 
 							shell.SendKeys "{ENTER}"
@@ -1727,26 +1740,20 @@ Sub GestionLogistica()
 							shell.SendKeys "{ENTER}"
 							JavaWindow("Ejecutivo de interacción").JavaDialog("Buscar: Orden > Solicitar").JavaTable("SearchJTable").SetCellData "#2","#4",str_idSim
 							wait 1
-						ElseIf str_MotivoCambio="CAEQ_SIM" Then
+						Case "CAEQ_SIM"
 							JavaWindow("Ejecutivo de interacción").JavaDialog("Buscar: Orden > Solicitar").JavaTable("SearchJTable").DoubleClickCell "#1","#4"
 							Set shell = CreateObject("Wscript.Shell") 
 							shell.SendKeys "{ENTER}"
 							JavaWindow("Ejecutivo de interacción").JavaDialog("Buscar: Orden > Solicitar").JavaTable("SearchJTable").SetCellData "#1","#4",str_idSim
 							wait 1
-						ElseIf str_MotivoCambio="CAEQ_EQUIPO" Then
+						Case "CAEQ_EQUIPO"
 							JavaWindow("Ejecutivo de interacción").JavaDialog("Buscar: Orden > Solicitar").JavaTable("SearchJTable").DoubleClickCell "#1","#4"
 							Set shell = CreateObject("Wscript.Shell") 
 							shell.SendKeys "{ENTER}"
 							JavaWindow("Ejecutivo de interacción").JavaDialog("Buscar: Orden > Solicitar").JavaTable("SearchJTable").SetCellData "#1","#4",str_idDispositivo
 							wait 1
-						End If
-					else
-						JavaWindow("Ejecutivo de interacción").JavaDialog("Buscar: Orden > Solicitar").JavaTable("SearchJTable").DoubleClickCell "#2","#4"
-						Set shell = CreateObject("Wscript.Shell") 
-						shell.SendKeys "{ENTER}"
-						JavaWindow("Ejecutivo de interacción").JavaDialog("Buscar: Orden > Solicitar").JavaTable("SearchJTable").SetCellData "#2","#4",str_idSim
-						wait 1
-					End If
+					End Select
+					
 					JavaWindow("Ejecutivo de interacción").JavaDialog("Buscar: Orden > Solicitar").CaptureBitmap RutaEvidencias() &Num_Iter&"_"&"Ingreso_Materiales_"&".png", True
 					imagenToWord "Ingreso de Materiales", RutaEvidencias() &Num_Iter&"_"&"Ingreso_Materiales_"&".png"
 					JavaWindow("Ejecutivo de interacción").JavaDialog("Buscar: Orden > Solicitar").JavaButton("Validar y Crear Factura").Object.doClick()

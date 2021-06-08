@@ -243,7 +243,7 @@ Sub ActualizarAtributos()
 	wait 2
 	JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Actualizar Atributos de").JavaEdit("Apellido").Set str_ApeCliente
 	wait 2
-	JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Actualizar Atributos de").JavaEdit("Número de Linea Reclamante").Set str_IDServicio
+	JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Actualizar Atributos de").JavaEdit("Número de Linea Reclamante").Set "920923453"
 	wait 2
 	JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Actualizar Atributos de").JavaList("Tipo de documento presentado").Select str_Tipo_Doc
 	wait 2

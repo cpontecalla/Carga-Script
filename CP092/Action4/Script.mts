@@ -13,7 +13,7 @@ str_TextoMotivo  = DataTable("e_Motivo_Text", dtLocalSheet)
 str_TipoData     = DataTable("e_Tipo_De_DATA", dtLocalSheet)
 
 Call PanelInteraccion()
-Call ProductosAsignados()
+Call IngresoNumero()
 Call DetallesProducto()
 Call FlujoWIC()
 Call ActualizarAtributos()
@@ -56,77 +56,42 @@ Sub PanelInteraccion()
 			wait 1
 		Wend
 End Sub
-Sub ProductosAsignados()
-  	wait 2
-	JavaWindow("Ejecutivo de interacción").JavaMenu("Buscar").JavaMenu("Pedidos").Select
-	JavaWindow("Ejecutivo de interacción").JavaMenu("Buscar").JavaMenu("Pedidos").JavaMenu("Productos Asignados").Select @@ hightlight id_;_29580658_;_script infofile_;_ZIP::ssf15.xml_;_
+Sub IngresoNumero()
+  		wait 5
+		JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Panel de Interacción").JavaTab("Acciones rápidas").Select "Suscripciones"
+		wait 1
+		JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Panel de Interacción").JavaRadioButton("Sólo contacto").Set
+		wait 1
+		While(JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Panel de Interacción").JavaEdit("TextFieldNative$1").Exist) = False
+			wait 1
+		Wend
+		wait 1
+		JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Panel de Interacción").JavaEdit("TextFieldNative$1").Set str_IDServicio
+		wait 1
+		JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Panel de Interacción").JavaButton("Buscar ahora").Click
 	
-		t = 0
-		While (JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Buscar: Productos asignados").JavaButton("Buscar ahora").Exist) = False
-			Wait 1	
-			t = t + 1
-			If (t >= 180) Then
-				DataTable("s_Resultado", dtLocalSheet) = "Fallido"
-				DataTable("s_Detalle", dtLocalSheet) = "No cargó la pantalla -Productos asignados- de manera correcta"
-				JavaWindow("Ejecutivo de interacción").CaptureBitmap RutaEvidencias() &Num_Iter&"_"&"ErrorProductosAsignados.png", True
-				imagenToWord "No cargó la pantalla -Productos asignados- de manera correcta",RutaEvidencias() &Num_Iter&"_"&"ErrorProductosAsignados.png"
-				Reporter.ReportEvent micFail, DataTable("s_Resultado", dtLocalSheet), DataTable("s_Detalle", dtLocalSheet)
-				ExitActionIteration
-			End If
-		Wend
-		Wait 1
-
-	JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Buscar: Productos asignados").JavaEdit("TextFieldNative$1_2").SetFocus
-	JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Buscar: Productos asignados").JavaEdit("TextFieldNative$1_2").Set str_IDServicio @@ hightlight id_;_10077622_;_script infofile_;_ZIP::ssf16.xml_;_
-
-		t = 0
-		While (JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Buscar: Productos asignados").JavaCheckBox("Incluir órdenes pendientes").Exist) = False
-			Wait 1	
-			t = t + 1
-			If (t >= 180) Then
-				DataTable("s_Resultado", dtLocalSheet) = "Fallido"
-				DataTable("s_Detalle", dtLocalSheet) = "No cargó el control -Incluir órdenes pendientes- de manera correcta"
-				JavaWindow("Ejecutivo de interacción").CaptureBitmap RutaEvidencias() &Num_Iter&"_"&"ErrorControlIncluirOrdenesPendientes.png", True
-				imagenToWord "No cargó el control -Incluir órdenes pendientes- de manera correcta",RutaEvidencias() &Num_Iter&"_"&"ErrorControlIncluirOrdenesPendientes.png"
-				Reporter.ReportEvent micFail, DataTable("s_Resultado", dtLocalSheet), DataTable("s_Detalle", dtLocalSheet)
-				ExitActionIteration
-			End If
-		Wend
-		Wait 1
-		
-	If DataTable("e_ID_Servicio", dtLocalSheet) = "" Then
-		DataTable("e_ID_Servicio", dtLocalSheet) = JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Buscar: Productos asignados").JavaTable("Tabla").GetCellData (0,2)	
-	End If
-
-	JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Buscar: Productos asignados").JavaList("ComboBoxNative$1").Select str_EstadoServ
-	wait 2
-	JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Buscar: Productos asignados").JavaButton("Buscar ahora").Click
-	wait 2
-
 		tiempo=0
 		Do 
-			If JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Buscar: Productos asignados").JavaButton("Buscar ahora").Exist Then
-				JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Buscar: Productos asignados").JavaButton("Buscar ahora").Click
-				nroreg = JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Buscar: Productos asignados").JavaButton("0 Registros").GetROProperty("label")
+			If JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Panel de Interacción").JavaButton("Buscar ahora").Exist Then
+				JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Panel de Interacción").JavaButton("Buscar ahora").Click
+				nroreg = JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Panel de Interacción").JavaButton("1 Registros").GetROProperty("attached text")
 				tiempo=tiempo+1
 				wait 1
 			End If
-			If (tiempo >= 20) Then
+				If (tiempo >= 180) Then
+					JavaWindow("Ejecutivo de interacción").CaptureBitmap RutaEvidencias() & "Num_Registro_"&Num_Iter&".png", True
+					imagenToWord "Error_Num_Registro_"&Num_Iter,RutaEvidencias() & "Num_Registro_"&Num_Iter&".png"
 					DataTable("s_Resultado", dtLocalSheet) = "Fallido"
-					DataTable("s_Detalle", dtLocalSheet) = "No se encuentra el número: "&DataTable("e_ID_Servicio", dtLocalSheet)&" en la consulta"
-					Reporter.ReportEvent micFail, DataTable("s_Resultado", dtLocalSheet), DataTable("s_Detalle", dtLocalSheet)
-					JavaWindow("Ejecutivo de interacción").CaptureBitmap RutaEvidencias() &Num_Iter&"_"&"ErrorNroBuscado.png", True
-					imagenToWord "Error Nro Buscado",RutaEvidencias() &Num_Iter&"_"&"ErrorNroBuscado.png"
-					JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Buscar: Productos asignados").JavaButton("Cerrar").Click
+					DataTable("s_Detalle", dtLocalSheet) = "Tiene muchos Registros, que se procedió a detener el flujo."
+					Reporter.ReportEvent micFail,DataTable("s_Resultado", dtLocalSheet),DataTable("s_Detalle", dtLocalSheet)
 					ExitActionIteration
-			End If
+				End If
 		Loop While Not(nroreg="1 Registros")
+		JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Panel de Interacción").JavaTable("Acciones rápidas").ClickCell 0, "#0", "LEFT"
+		JavaWindow("Ejecutivo de interacción").CaptureBitmap RutaEvidencias() & "BusquedaSuscripcion.png", True
+		imagenToWord "Busqueda de Suscripcion",RutaEvidencias() & "BusquedaSuscripcion.png"
 		wait 1
-
-	JavaWindow("Ejecutivo de interacción").CaptureBitmap RutaEvidencias() &Num_Iter&"_"&"IDServicioEncontrado.png", True
-	imagenToWord "Id de Servicio: "&str_IDServicio&" encontrado", RutaEvidencias() &Num_Iter&"_"&"IDServicioEncontrado.png"	
-	JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Buscar: Productos asignados").JavaTable("Tabla").DoubleClickCell 0, "#2","LEFT"
-	Wait 2
+		JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Panel de Interacción").JavaButton("Ver Productos Asignados").Click
 End Sub
 Sub DetallesProducto()
 
@@ -319,7 +284,7 @@ Sub ResumenOrden()
 
 	tiempo = 0
 	Do
-		While((JavaWindow("Ejecutivo de interacción").JavaDialog("Error interno").Exist) Or (JavaWindow("Ejecutivo de interacción").JavaDialog("Mensaje").Exist) Or (JavaWindow("Ejecutivo de interacción").JavaDialog("Resumen de la orden (Orden").Exist)) = False
+		While((JavaWindow("Ejecutivo de interacción").JavaDialog("Mensaje").Exist) Or (JavaWindow("Ejecutivo de interacción").JavaDialog("Resumen de la orden (Orden").Exist)) = False
 			wait 1
 			JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Resumen de la orden (Orden").JavaButton("Validade y Ver Contrato").Click
 			If DataTable("e_WIC_ContrCli",dtLocalSheet)="SI" Then
@@ -369,7 +334,7 @@ Sub ResumenOrden()
 	wait 2
 	
 		t = 0
-		While ((JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Orden 2386368A").Exist) Or (JavaWindow("Ejecutivo de interacción").JavaDialog("Mensajes de validación").Exist)) = False
+		While (JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Orden 2386368A").Exist)= False
 			Wait 1	
 			t = t + 1
 			If (t >= 180) Then
@@ -383,9 +348,24 @@ Sub ResumenOrden()
 		Wend
 		Wait 1
 		
-	If JavaWindow("Ejecutivo de interacción").JavaDialog("Mensajes de validación").Exist(1) Then
-		JavaWindow("Ejecutivo de interacción").JavaDialog("Mensajes de validación").JavaButton("Aceptar").Click
-	End If
+'		t = 0
+'		While ((JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Orden 2386368A").Exist) Or (JavaWindow("Ejecutivo de interacción").JavaDialog("Mensajes de validación").Exist)) = False
+'			Wait 1	
+'			t = t + 1
+'			If (t >= 180) Then
+'				DataTable("s_Resultado", dtLocalSheet) = "Fallido"
+'				DataTable("s_Detalle", dtLocalSheet) = "No cargó la orden generada de manera correcta"
+'				JavaWindow("Ejecutivo de interacción").CaptureBitmap RutaEvidencias() &Num_Iter&"_"&"ErrorOrdenGenerada.png", True
+'				imagenToWord "No cargó la orden generada de manera correcta",RutaEvidencias() &Num_Iter&"_"&"ErrorOrdenGenerada.png"
+'				Reporter.ReportEvent micFail, DataTable("s_Resultado", dtLocalSheet), DataTable("s_Detalle", dtLocalSheet)
+'				ExitActionIteration
+'			End If
+'		Wend
+'		Wait 1
+		
+'	If JavaWindow("Ejecutivo de interacción").JavaDialog("Mensajes de validación").Exist(1) Then
+'		JavaWindow("Ejecutivo de interacción").JavaDialog("Mensajes de validación").JavaButton("Aceptar").Click
+'	End If
 '	
 '	Select Case DataTable("e_Ambiente", "Login [Login]")
 '		Case "UAT8"

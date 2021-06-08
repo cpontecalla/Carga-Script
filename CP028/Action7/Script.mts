@@ -351,10 +351,6 @@ Sub ResumenOrden()
 					JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Resumen de la orden (Orden").JavaButton("Validar y Ver Contrato").Click
 				End If
 			End If
-			If JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Resumen de la orden (Orden").JavaButton("Renunciar cargo").Exist Then
-				Exit Do
-			End If
-	
 '				tiempo = tiempo + 1
 '				wait 3
 '			Wend
@@ -729,46 +725,6 @@ Sub DetalleActividadOrden()
 	End If
 	
 End Sub
-
-If JavaWindow("Ejecutivo de interacción").JavaDialog("Problema").Exist Then
-	varprb=JavaWindow("Ejecutivo de interacción").JavaDialog("Problema").JavaObject("JPanel").GetROProperty("text")
-	varprb=Replace(varprb,"<html>"," ")
-	varprb=Replace(varprb,"</html>"," ")
-	varprb=Replace(varprb,"&#8203;"," ")
-	varprb=Replace(varprb,"<br>"," ")
-	varprb=Replace(varprb,"<br>"," ")
-	varprb=Replace(varprb,"&nbsp;"," ")
-	varprb=Mid(varprb, 2, 32)
-	If varprb="Problema de entrada del usuario" Then
-		DataTable("s_Resultado",dtLocalSheet) = "Fallido"
-		DataTable("s_Detalle",dtLocalSheet) = var1
-		Reporter.ReportEvent micFail, DataTable("s_Resultado",dtLocalSheet), DataTable("s_Detalle",dtLocalSheet) 
-		JavaWindow("Ejecutivo de interacción").CaptureBitmap RutaEvidencias() &Num_Iter&"_"&"MensajeValidación"&".png" , True
-		imagenToWord "Mensaje de Validación", RutaEvidencias() &Num_Iter&"_"&"MensajeValidación"&".png"
-		wait 1
-		JavaWindow("Ejecutivo de interacción").JavaDialog("Problema").JavaButton("OK").Click
-		wait 2
-		JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Actualizar Atributos de").JavaButton("Cerrar").Click
-		wait 2
-		JavaWindow("Ejecutivo de interacción").JavaDialog("Cerrar negociación de").JavaButton("Cancelar orden").Click
-		wait 2
-		JavaWindow("Ejecutivo de interacción").JavaDialog("Actualizar Atributos de").JavaList("Motivo:").Select "Cancelar a Pedido de Cliente"
-		wait 2
-		JavaWindow("Ejecutivo de interacción").JavaDialog("Actualizar Atributos de").JavaButton("Aceptar").Click
-		wait 2
-		If JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Orden 2386368A").JavaButton("Cerrar").Exist Then
-			JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Orden 2386368A").JavaButton("Cerrar").Click
-			wait 2
-		End If
-		If JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Detalles del producto").Exist Then
-			JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Detalles del producto").JavaButton("Cerrar").Click
-			wait 2	
-		End If
-		wait 3
-		ExitActionIteration
-	End If
-End If
-
 
 
 

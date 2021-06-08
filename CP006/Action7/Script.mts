@@ -56,10 +56,12 @@ Sub CrearAcuerdoComercial()
 		JavaWindow("Ejecutivo de interacción").JavaMenu("Crear").JavaMenu("Pedidos").Select
 		JavaWindow("Ejecutivo de interacción").JavaMenu("Crear").JavaMenu("Pedidos").JavaMenu("Acuerdo Comercial").Select
 		wait 1
-		
-		While (JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Crear Acuerdo Comercial").JavaStaticText("Acuerdo Comercial(st)").Exist )= False
-				wait 1
+		While ((JavaWindow("Ejecutivo de interacción").JavaDialog("Autenticación del Cliente").Exist) Or (JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Crear Acuerdo Comercial").JavaStaticText("Acuerdo Comercial(st)").Exist)) = False
+			wait 1
 		Wend
+		If JavaWindow("Ejecutivo de interacción").JavaDialog("Autenticación del Cliente").Exist Then
+			RunAction "WIC", oneIteration
+		End If
 		
 		If JavaWindow("Ejecutivo de interacción").JavaDialog("Missing Permissions").JavaButton("OK").Exist Then
 			varerror=JavaWindow("Ejecutivo de interacción").JavaDialog("Missing Permissions").JavaObject("JPanel").GetROProperty("attached text")
@@ -73,7 +75,7 @@ Sub CrearAcuerdoComercial()
 				SystemUtil.CloseProcessByName "jp2launcher.exe"
 				ExitTest
 		End If	
-		JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Crear Acuerdo Comercial").JavaButton("Renombrar la Orden").WaitProperty "enabled", true, 10000 @@ hightlight id_;_19402115_;_script infofile_;_ZIP::ssf8.xml_;_
+		JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Crear Acuerdo Comercial").JavaButton("Renombrar la Orden").WaitProperty "enabled", true, 30000 @@ hightlight id_;_19402115_;_script infofile_;_ZIP::ssf8.xml_;_
 		JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Crear Acuerdo Comercial").JavaButton("Renombrar la Orden").Click @@ hightlight id_;_2841166_;_script infofile_;_ZIP::ssf3.xml_;_
 		While (JavaWindow("Ejecutivo de interacción").JavaDialog("Cambiar el nombre de Acuerdo").JavaEdit("Nombre del pedido:").Exist )= False
 				wait 1
@@ -197,7 +199,7 @@ Sub AgregarAcuerdoFacturacion()
 										ExitActionIteration
 							End  If
 						Wend
-	
+		wait 1
 		JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Crear Acuerdo Comercial_2").JavaButton("Lookup-Validated").WaitProperty "enabled", true, 10000
 		wait 2
 		JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Crear Acuerdo Comercial_2").JavaRadioButton("Nuevo").Set

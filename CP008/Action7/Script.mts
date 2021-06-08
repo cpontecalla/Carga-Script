@@ -56,10 +56,12 @@ Sub CrearAcuerdoComercial()
 		JavaWindow("Ejecutivo de interacción").JavaMenu("Crear").JavaMenu("Pedidos").Select
 		JavaWindow("Ejecutivo de interacción").JavaMenu("Crear").JavaMenu("Pedidos").JavaMenu("Acuerdo Comercial").Select
 		wait 1
-		
-		While (JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Crear Acuerdo Comercial").JavaStaticText("Acuerdo Comercial(st)").Exist )= False
-				wait 1
+		While ((JavaWindow("Ejecutivo de interacción").JavaDialog("Autenticación del Cliente").Exist) Or (JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Crear Acuerdo Comercial").JavaStaticText("Acuerdo Comercial(st)").Exist)) = False
+			wait 1
 		Wend
+		If JavaWindow("Ejecutivo de interacción").JavaDialog("Autenticación del Cliente").Exist Then
+			RunAction "WIC", oneIteration
+		End If
 		
 		If JavaWindow("Ejecutivo de interacción").JavaDialog("Missing Permissions").JavaButton("OK").Exist Then
 			varerror=JavaWindow("Ejecutivo de interacción").JavaDialog("Missing Permissions").JavaObject("JPanel").GetROProperty("attached text")
@@ -197,7 +199,7 @@ Sub AgregarAcuerdoFacturacion()
 										ExitActionIteration
 							End  If
 						Wend
-	
+		wait 1
 		JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Crear Acuerdo Comercial_2").JavaButton("Lookup-Validated").WaitProperty "enabled", true, 10000
 		wait 2
 		JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Crear Acuerdo Comercial_2").JavaRadioButton("Nuevo").Set

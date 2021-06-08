@@ -179,7 +179,7 @@ Sub ActualizarAtributos()
 			Reporter.ReportEvent micPass, "Exito", "Cargo correctamente la pantalla Detalles del producto"
 		End If
 		wait 2
-		Loop While Not ((JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Detalles del producto").Exist) or (JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Actualizar Atributos de").JavaList("Motivo:").Exist) or (JavaWindow("Ejecutivo de interacción").JavaDialog("Detalles del producto").Exist)Or(JavaWindow("Ejecutivo de interacción").JavaDialog("Mensaje").Exist))
+		Loop While Not ((JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Detalles del producto").Exist) or (JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Actualizar Atributos de").JavaList("Motivo:").Exist) Or (JavaWindow("Ejecutivo de interacción").JavaDialog("Detalles del producto").Exist) Or (JavaWindow("Ejecutivo de interacción").JavaDialog("Mensaje").Exist))
 	
 	If JavaWindow("Ejecutivo de interacción").JavaDialog("Detalles del producto").Exist(1) Then
 		var1=JavaWindow("Ejecutivo de interacción").JavaDialog("Detalles del producto").JavaTable("Las siguientes acciones").GetCellData(0,0)

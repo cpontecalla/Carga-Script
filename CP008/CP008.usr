@@ -15,9 +15,10 @@ Action0=Action0\Script.mts
 Alta_Corpo=Action1\Script.mts
 WIC2=Action2\Script.mts
 Login=Action4\Script.mts
-Buscar_Cliente=Action5\Script.mts
 Log_Out=Action6\Script.mts
 A_Comercial=Action7\Script.mts
+WIC=Action8\Script.mts
+Buscar_Cliente=Action9\Script.mts
 
 [VuserProfiles]
 Profiles=Default Profile
@@ -47,7 +48,7 @@ Insight=
 Java=
 Windows Applications=
 TEA=
-UI Automation=
+Web=
 XML=
 
 [ExtraFiles]
@@ -67,12 +68,15 @@ Action2\ObjectRepository.bdb=
 Action4\Script.mts=
 Action4\Resource.mtr=
 Action4\ObjectRepository.bdb=
-Action5\Script.mts=
-Action5\Resource.mtr=
-Action5\ObjectRepository.bdb=
 Action6\Script.mts=
 Action6\Resource.mtr=
 Action6\ObjectRepository.bdb=
 Action7\Script.mts=
 Action7\Resource.mtr=
 Action7\ObjectRepository.bdb=
+Action8\Script.mts=
+Action8\Resource.mtr=
+Action8\ObjectRepository.bdb=
+Action9\Script.mts=
+Action9\Resource.mtr=
+Action9\ObjectRepository.bdb=

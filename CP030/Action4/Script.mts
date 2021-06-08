@@ -181,8 +181,8 @@ Sub DetallesProducto()
 			Else
 				Reporter.ReportEvent micPass, "Éxito", "Cargó correctamente la pantalla Detalles del producto"
 			End If
-		Loop While Not JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Detalles del producto").JavaButton("Cerrar").Exist(2)
-	
+		Loop While Not JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Detalles del producto").JavaButton("Calcular Penalidad").Exist
+		
 	JavaWindow("Ejecutivo de interacción").JavaMenu("Acciones").JavaMenu("Pedidos").Select
 	wait 1
 	If (JavaWindow("Ejecutivo de interacción").JavaMenu("Acciones").JavaMenu("Pedidos").JavaMenu("Dar de baja").GetROProperty("enabled") = "1") Then
@@ -194,6 +194,7 @@ Sub DetallesProducto()
 		JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Detalles del producto").JavaButton("Cerrar").Click
 		ExitActionIteration
 	End If
+	
 End Sub
 Sub ActualizarAtributos()
 	

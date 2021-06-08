@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+# SharpDevelop 4.1.3.0-UFT_14
+Project("") = "GUITest_1", "GUITest_1\Test.tsp", "BACD6821-754F-4BDC-B5F9-0468660E1BEE"
+	ProjectSection(ProjectMetadata) = HP.UFT.ProjectSystem.Dynamic.ProjectMetadata
+		PathInformation = D:\Carga de Scripts\TEF_UAT4_CRM\TSOFT_Transferencia_UAT4-master\GUITest_1\Test.tsp
+		Keyword = QTP
+		OpenAsReadOnly = False
+		BaselineId = 
+	EndProjectSection
+EndProject
+Project("") = "GUITest_2", "GUITest_2\Test.tsp", "7BDEBB23-D7C9-4C5B-A931-E09419285581"
+	ProjectSection(ProjectMetadata) = HP.UFT.ProjectSystem.Dynamic.ProjectMetadata
+		PathInformation = D:\Carga de Scripts\TEF_UAT4_CRM\TSOFT_Transferencia_UAT4-master\GUITest_2\Test.tsp
+		Keyword = QTP
+		OpenAsReadOnly = False
+		BaselineId = 
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		BACD6821-754F-4BDC-B5F9-0468660E1BEE.Debug|Any CPU.Build.0 = Debug|Any CPU
+		BACD6821-754F-4BDC-B5F9-0468660E1BEE.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		BACD6821-754F-4BDC-B5F9-0468660E1BEE.Release|Any CPU.Build.0 = Release|Any CPU
+		BACD6821-754F-4BDC-B5F9-0468660E1BEE.Release|Any CPU.ActiveCfg = Release|Any CPU
+		7BDEBB23-D7C9-4C5B-A931-E09419285581.Debug|Any CPU.Build.0 = Debug|Any CPU
+		7BDEBB23-D7C9-4C5B-A931-E09419285581.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		7BDEBB23-D7C9-4C5B-A931-E09419285581.Release|Any CPU.Build.0 = Release|Any CPU
+		7BDEBB23-D7C9-4C5B-A931-E09419285581.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+EndGlobal

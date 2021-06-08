@@ -16,7 +16,7 @@ Call PanelInteraccion()
 Call IngresoNumero()
 'Call ProductosAsignados()
 Call DetallesProducto()
-Call FlujoWic()
+'Call FlujoWic()
 Call ActualizarAtributos()
 Call ParametrizaUsuario()
 Call NegociarConfiguracion()
@@ -222,7 +222,11 @@ Sub DetallesProducto()
 			Else
 				Reporter.ReportEvent micPass, "Éxito", "Cargó correctamente la pantalla Detalles del producto"
 			End If
-		Loop While Not ((JavaWindow("Ejecutivo de interacción").JavaDialog("Detalles del producto").Exist) Or (JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Actualizar Atributos de").JavaList("Motivo:").Exist) Or (JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Detalles del producto").Exist))
+		Loop While Not ((JavaWindow("Ejecutivo de interacción").JavaDialog("Detalles del producto").Exist) Or (JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Actualizar Atributos de").JavaList("Motivo:").Exist) Or (JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Detalles del producto").Exist) Or (JavaWindow("Ejecutivo de interacción").JavaDialog("Autenticación del Cliente").Exist))
+		
+	If JavaWindow("Ejecutivo de interacción").JavaDialog("Autenticación del Cliente").Exist Then
+		RunAction "WIC_1", oneIteration
+	End  If	
 		
 	If JavaWindow("Ejecutivo de interacción").JavaDialog("Detalles del producto").Exist(1) Then
 		var1=JavaWindow("Ejecutivo de interacción").JavaDialog("Detalles del producto").JavaTable("Las siguientes acciones").GetCellData(0,0)
@@ -240,10 +244,8 @@ Sub DetallesProducto()
 	
 End Sub
 Sub FlujoWic()
-	
-	If DataTable("e_WIC_ValidaCli",dtLocalSheet)="SI" Then
-		RunAction "WIC_1", oneIteration
-	End  If
+
+
 '		'En la ventana Sistema de información y validación del cliente
 '		'Damos clic en el boton "Continuar"
 '		If UIAWindow("Ejecutivo de interacción").UIAWindow("Autenticación del Cliente").UIAObject("Movistar").UIAButton("Continuar").Exist(1) Then

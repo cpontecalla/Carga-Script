@@ -1,7 +1,7 @@
 ﻿
 Option  Explicit
 
-Dim Valor, Fila, Valor2, i, Filas, varsap, tiempo, var, var1, flag, vartext, vardisp, varsim, shell, varlog, varhab, Num_Iter, varfinan, varfila, varmsgval, varId
+Dim Valor, Fila, Valor2, i, Filas, varsap, tiempo, var, var1, flag, vartext, vardisp, varsim, shell, varlog, varhab, Num_Iter, varfinan, varfila, varmsgval, varId, Count, rs
 Dim varValidaRespuestaCumplimiento, nroreg, varpagoinm, varnuevo, varprob, varasig, varasig2, varacuer, vardepo, varlogis, Iterator, varselec, str_titulo, varmsg, varvend
 Dim str_tipoalta
 Dim str_motivoalta
@@ -14,7 +14,7 @@ Dim str_cant_cuota
 Dim str_tipodata
 Dim str_idDispositivo
 Dim str_idSim
-Dim c
+Dim c,j,h,nodeName,nodeName2nd,nodeName3nd,varpag
 
 Num_Iter 		 	= Environment.Value("ActionIteration") 
 str_tipoalta     	= DataTable("e_Tipo_Alta", dtLocalSheet)
@@ -39,6 +39,7 @@ Call GeneracionOrden()
 'If DataTable("e_Ambiente", "Login [Login]")<>"PROD" Then
 	Call PagoManual()
 'End If
+
 Call GestionLogistica()
 'If DataTable("e_Ambiente", "Login [Login]")<>"PROD" Then
 	Call EmpujeOrden()
@@ -47,7 +48,7 @@ Call OrdenCerrado()
 Call DetalleActividadOrden()
 
 Sub EncontrarAcuerdoComercial()
-	wait 10
+	wait 1
 		Do
 		tiempo=0
 		Do
@@ -185,8 +186,18 @@ Sub ParametrosAlta()
 	End If
 	
 	wait 1
-	JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Actualizar Atributos de").JavaList("Motivo:").WaitProperty "enabled", true, 10000
-	JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Actualizar Atributos de").JavaList("Motivo:").Select str_tipoalta @@ hightlight id_;_440740_;_script infofile_;_ZIP::ssf65.xml_;_
+	Dim Iterator
+	Count = JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Actualizar Atributos de").JavaList("Motivo:").GetROProperty ("items count")
+	For Iterator = 0 To Count-1
+	 	rs = JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Actualizar Atributos de").JavaList("Motivo:").GetItem (Iterator)
+		If rs = str_tipoalta Then
+			JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Actualizar Atributos de").JavaList("Motivo:").Select str_tipoalta
+			Exit for
+		ElseIf Iterator = Count-1 Then
+			JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Actualizar Atributos de").JavaList("Motivo:").Select "Pedido de Cliente"
+			Exit for
+		End if	
+	Next
 	wait 1
 	JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Actualizar Atributos de").JavaEdit("Texto del motivo:").Set str_motivoalta
 	wait 1
@@ -242,8 +253,8 @@ Sub RecursosAlta()
 		While(JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaEdit("TextFieldNative$1").Exist) = False
 			wait 1
 		Wend
-'	JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaEdit("TextFieldNative$1").Set "6%%%%%%%%"
-	JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaEdit("TextFieldNative$1").Set "920%%%%%%"
+	JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaEdit("TextFieldNative$1").Set "6%%%%%%%%"
+'	JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaEdit("TextFieldNative$1").Set "920%%%%%%"
 	wait 2
 	JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaButton("Proponer números").Click
 	wait 2
@@ -311,54 +322,149 @@ Sub RecursosAlta()
 		wait 1
 	End If
 	
-	varId = JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").GetCellData (1,1) 
-	varfila=JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").GetROProperty("rows")
-	For Iterator = varfila-1 To 0 Step -1
-			JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").SelectRow "#"&Iterator
-			JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").PressKey "C",micCtrl
-			JavaWindow("Ejecutivo de interacción").JavaEdit("Titulo").PressKey "V",micCtrl
-			str_titulo=JavaWindow("Ejecutivo de interacción").JavaEdit("Titulo").GetROProperty("text")
-			str_titulo = Replace(str_titulo,"Nombre    Valor    Por única vez    Mensual     ","")
-			If str_titulo="Grupo de SIM    NA            " Then
-				str_titulo = Left(str_titulo,12)
-				else
-				str_titulo = Left(str_titulo,11)
-			End If
-					Select Case DataTable("e_Tipo_Alta", dtLocalSheet)
-						Case "Alta Nueva Equipo + SIM"
-							If str_titulo="Tipo de SIM" Then
-								JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").DoubleClickCell Iterator, "#1", "LEFT"
-								JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").SetCellData Iterator, "#1", DataTable("e_TipoSIM", dtLocalSheet) 
-								JavaWindow("Ejecutivo de interacción").CaptureBitmap RutaEvidencias() & "Mostrar_Atributos_"&Num_Iter&".png", True
-								wait 1
-								Exit For
-							End  If
-							
-						Case "Alta Nueva solo SIM"
-							If str_titulo="Tipo de SIM" Then
-								JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").DoubleClickCell Iterator, "#1", "LEFT"
-								JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").SetCellData Iterator, "#1", DataTable("e_TipoSIM", dtLocalSheet) 
-								wait 1
-							End  If
-							If str_titulo="Grupo de SIM" Then
-								JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").DoubleClickCell Iterator, "#1", "LEFT"
-								JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").SetCellData Iterator, "#1", "Estandar"
-								wait 1
-							End  If
-							If str_titulo="Número IMEI" Then
-								JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").DoubleClickCell Iterator, "#1", "LEFT"
-								JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").SetCellData Iterator, "#1", "111111111111111"
-								wait 1
-								Exit For
-							End If
-						End Select	
-					wait 1
-		Next
-
+'	varId = JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").GetCellData (1,1) 
+'	varfila=JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").GetROProperty("rows")
+'	For Iterator = varfila-1 To 0 Step -1
+'			JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").SelectRow "#"&Iterator
+'			JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").PressKey "C",micCtrl
+'			JavaWindow("Ejecutivo de interacción").JavaEdit("Titulo").PressKey "V",micCtrl
+'			str_titulo=JavaWindow("Ejecutivo de interacción").JavaEdit("Titulo").GetROProperty("text")
+'			str_titulo = Replace(str_titulo,"Nombre    Valor    Por única vez    Mensual     ","")
+'			If str_titulo="Grupo de SIM    NA            " Then
+'				str_titulo = Left(str_titulo,12)
+'				else
+'				str_titulo = Left(str_titulo,11)
+'			End If
+'					Select Case DataTable("e_Tipo_Alta", dtLocalSheet)
+'						Case "Alta Nueva Equipo + SIM"
+'							If str_titulo="Tipo de SIM" Then
+'								JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").DoubleClickCell Iterator, "#1", "LEFT"
+'								JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").SetCellData Iterator, "#1", DataTable("e_TipoSIM", dtLocalSheet) 
+'								JavaWindow("Ejecutivo de interacción").CaptureBitmap RutaEvidencias() & "Mostrar_Atributos_"&Num_Iter&".png", True
+'								wait 1
+'								Exit For
+'							End  If
+'							
+'						Case "Alta Nueva solo SIM"
+'							If str_titulo="Tipo de SIM" Then
+'								JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").DoubleClickCell Iterator, "#1", "LEFT"
+'								JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").SetCellData Iterator, "#1", DataTable("e_TipoSIM", dtLocalSheet) 
+'								wait 1
+'							End  If
+'							If str_titulo="Grupo de SIM" Then
+'								JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").DoubleClickCell Iterator, "#1", "LEFT"
+'								JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").SetCellData Iterator, "#1", "Estandar"
+'								wait 1
+'							End  If
+'							If str_titulo="Número IMEI" Then
+'								JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").DoubleClickCell Iterator, "#1", "LEFT"
+'								JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").SetCellData Iterator, "#1", "111111111111111"
+'								wait 1
+'								Exit For
+'							End If
+'						End Select	
+'					wait 1
+'		Next
+	Select Case DataTable("e_Tipo_Alta", dtLocalSheet)
+		Case "Alta Nueva Equipo + SIM"
+			'IngresoTipoSIM
+			filas = JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").GetROProperty("rows")
+			For Iterator = filas-1 To 0 step -1
+			    JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").SelectRow ("#"&Iterator)
+				j = JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").GetCellData("#"&Iterator, "#1")
+			    h = Instr(1,j,"Tipo de SIM")
+			    If h <> 0 Then
+			        JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").DoubleClickCell "#"&Iterator, "#1", "LEFT" 
+			    	JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").SetCellData "#"&Iterator, "#1",DataTable("e_TipoSIM", dtLocalSheet)
+			    	JavaWindow("Ejecutivo de interacción").CaptureBitmap RutaEvidencias() & "IngresoTipoSIM.png", True
+					imagenToWord "Ingresamos Tipo SIM",RutaEvidencias() & "IngresoTipoSIM.png"
+			    	Exit for 
+			    End If
+			Next 
+		Case "Alta Nueva solo SIM"
+			'IngresoTipoSIM
+			filas = JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").GetROProperty("rows")
+			For Iterator = filas-1 To 0 step -1
+			    JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").SelectRow ("#"&Iterator)
+				j = JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").GetCellData("#"&Iterator, "#1")
+			    h = Instr(1,j,"Tipo de SIM")
+			    If h <> 0 Then
+			        JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").DoubleClickCell "#"&Iterator, "#1", "LEFT" 
+			    	JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").SetCellData "#"&Iterator, "#1",DataTable("e_TipoSIM", dtLocalSheet) 
+			    	JavaWindow("Ejecutivo de interacción").CaptureBitmap RutaEvidencias() & "IngresoTipoSIM.png", True
+					imagenToWord "Ingresamos Tipo SIM",RutaEvidencias() & "IngresoTipoSIM.png"
+			    	Exit for 
+			    End If
+			Next 
+			
+			'IngresoGrupoSIM
+			filas = JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").GetROProperty("rows")
+			For Iterator = filas-1 To 0 step -1
+			    JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").SelectRow ("#"&Iterator)
+				j = JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").GetCellData("#"&Iterator, "#1")
+			    h = Instr(1,j,"Grupo de SIM")
+			    If h <> 0 Then
+			    	JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").DoubleClickCell "#"&Iterator, "#1", "LEFT" 
+			    	JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").SetCellData "#"&Iterator, "#1","Estandar"
+			    	JavaWindow("Ejecutivo de interacción").CaptureBitmap RutaEvidencias() & "IngresoGrupoSIM.png", True
+					imagenToWord "Ingresamos Grupo SIM",RutaEvidencias() & "IngresoGrupoSIM.png"
+			    	Exit for 
+			    End If
+			Next 
+			
+			'IngresoIMEI
+			filas = JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").GetROProperty("rows")
+			For Iterator = filas-1 To 0 step -1
+			    JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").SelectRow ("#"&Iterator)
+				j = JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").GetCellData("#"&Iterator, "#1")
+			    h = Instr(1,j,"Número IMEI")
+			    If h <> 0 Then
+			    	JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").DoubleClickCell "#"&Iterator, "#1", "LEFT" 
+			    	JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").SetCellData "#"&Iterator, "#1",str_idDispositivo
+			    	JavaWindow("Ejecutivo de interacción").CaptureBitmap RutaEvidencias() & "IngresoIMEI.png", True
+					imagenToWord "Ingresamos IMEI",RutaEvidencias() & "IngresoIMEI.png"
+			    	Exit for 
+			    End If
+			Next 
+	End Select
+	
 	JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaButton("Validar").Click
 	wait 8
-	JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").CaptureBitmap RutaEvidencias() &Num_Iter&"_"&"Tipo_SimCard_"&".png", True
-	imagenToWord "Tipo de SIM Card", RutaEvidencias() &Num_Iter&"_"&"Tipo_SimCard_"&".png"
+	If JavaWindow("Ejecutivo de interacción").JavaDialog("Mensajes de validación").Exist Then
+		JavaWindow("Ejecutivo de interacción").CaptureBitmap RutaEvidencias() &Num_Iter&"_"&"Mensajesdevalidación"&".png", True
+		imagenToWord "Mensajes de validación", RutaEvidencias() &Num_Iter&"_"&"Mensajesdevalidación"&".png"
+		wait 1
+		varpag=JavaWindow("Ejecutivo de interacción").JavaDialog("Mensajes de validación").JavaTable("SearchJTable").GetCellData(0,1)
+		If varpag="<html>El tipo de SIM no puede ser NA -&#8203; se debe seleccionar un valor relevante. (Detectado en Tarjeta SIM).</html>" Then
+			wait 1
+			JavaWindow("Ejecutivo de interacción").JavaDialog("Mensajes de validación").JavaButton("Cerrar").Click
+			wait 1
+			'IngresoTipoSIM
+			filas = JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").GetROProperty("rows")
+			For Iterator = filas-1 To 0 step -1
+			    JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").SelectRow ("#"&Iterator)
+				j = JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").GetCellData("#"&Iterator, "#1")
+			    h = Instr(1,j,"Tipo de SIM")
+			    If h <> 0 Then
+			        JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").DoubleClickCell "#"&Iterator, "#1", "LEFT" 
+			    	JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTable("Mostrar atributos:").SetCellData "#"&Iterator, "#1",DataTable("e_TipoSIM", dtLocalSheet)
+			    	JavaWindow("Ejecutivo de interacción").CaptureBitmap RutaEvidencias() & "IngresoTipoSIM.png", True
+					imagenToWord "Ingresamos Tipo SIM",RutaEvidencias() & "IngresoTipoSIM.png"
+			    	Exit for 
+			    End If
+			Next
+			JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaButton("Validar").Click
+			wait 8			
+		End If
+	End If
+	
+	If DataTable("e_TipoServAdicional",dtLocalSheet)<>Empty Then
+		ServiciosAdicionales()
+	End If
+	
+	
+	JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").CaptureBitmap RutaEvidencias() &Num_Iter&"_"&"NPC"&".png", True
+	imagenToWord "Negociar Configuración del Producto", RutaEvidencias() &Num_Iter&"_"&"NPC"&".png"
 	JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaButton("Siguiente >").Click
 	
 		tiempo = 0
@@ -410,6 +516,46 @@ Sub RecursosAlta()
 			ExitActionIteration
 		End If 
 		
+End Sub
+Sub ServiciosAdicionales()
+	
+	filas = JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTree("Subproductos disponibles").GetROProperty("items count")
+	For Iterator = 0 To filas-1
+		nodeName=JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTree("Subproductos disponibles").GetItem(Iterator)
+		If nodeName = DataTable("e_TipoServAdicional", dtLocalSheet) Then
+			JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTree("Subproductos disponibles").Select(nodeName)
+			JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTree("Subproductos disponibles").Expand(nodeName)
+			filas = JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTree("Subproductos disponibles").GetROProperty("items count")
+		 End If
+	Next 
+	
+	filas = JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTree("Subproductos disponibles").GetROProperty("items count")
+	For Iterator = 0 To filas-1	 
+		 nodeName2nd=JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTree("Subproductos disponibles").GetItem(Iterator)
+		 If nodeName2nd=DataTable("e_ServAdicional", dtLocalSheet) Then
+			JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTree("Subproductos disponibles").Select(nodeName2nd)
+			If DataTable("e_ServAdicional2", dtLocalSheet)<>Empty Then
+				JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTree("Subproductos disponibles").Expand(nodeName2nd)
+			End If
+			
+			Exit For
+		End If
+ 	Next 
+ 	filas = JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTree("Subproductos disponibles").GetROProperty("items count")
+	For Iterator = 0 To filas-1	 
+		 nodeName3nd=JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTree("Subproductos disponibles").GetItem(Iterator)
+		 If nodeName3nd=DataTable("e_ServAdicional2", dtLocalSheet) Then
+			JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaTree("Subproductos disponibles").Select(nodeName3nd)
+			Exit For
+		End If
+ 	Next 
+ 	JavaWindow("Ejecutivo de interacción").CaptureBitmap RutaEvidencias() & "ServiciosAdicionales.png", True
+	imagenToWord "Servicios Adicional seleccionado",RutaEvidencias() & "ServiciosAdicionales.png"
+	
+	JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaButton("Agregar").Click
+	JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Configuración").JavaButton("Validar").Click
+	wait 8
+	
 End Sub
 Sub TipoEnvio()
 	
@@ -576,7 +722,7 @@ Sub TipoEnvio()
 		wait 1
 	End If		
 		
-		wait 5
+		wait 2
 		JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Distribución_2").JavaEdit("ID del Acuerdo de Facturación:").WaitProperty "editable", 1, 10000
 	
 			Do While(JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Distribución_2").JavaButton("Lookup-Validated").Exist) = False
@@ -584,7 +730,7 @@ Sub TipoEnvio()
 					c=c+1 
 					If (c=30) Then exit Do 
 			Loop
-		wait 1
+		wait 2
 '		If JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Distribución_2").JavaButton("Lookup-Validated").Exist Then
 '			JavaWindow("Ejecutivo de interacción").CaptureBitmap RutaEvidencias() &Num_Iter&"_"&"Negociar Distribución"&".png" , True
 '			imagenToWord "Negociar Distribución", RutaEvidencias() &Num_Iter&"_"&"Negociar Distribución"&".png"
@@ -615,21 +761,19 @@ Sub TipoEnvio()
 '			End If	
 '			wait 2		
 '		End If
-		
-		wait 5
 		JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Distribución_2").JavaRadioButton("Nuevo").Set
-		wait 5	
+		wait 2
 		JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Distribución_2").JavaList("Mostrar:").Select "Acciones de orden activas "
-		wait 5
+		wait 2
 		JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Distribución_2").JavaButton("Siguiente >_2").Click	
-		wait 5 
+		wait 2
 		
 
 			tiempo = 0
 			Do
 				tiempo = tiempo + 1
 	
-				If tiempo>=680 Then
+				If tiempo>=180 Then
 					DataTable("s_Resultado", dtLocalSheet) = "Fallido"
 					DataTable("s_Detalle", dtLocalSheet) = "No cargo la pantalla Neogicar Pago"
 					Reporter.ReportEvent micFail, DataTable("s_Resultado", dtLocalSheet) , DataTable("s_Detalle", dtLocalSheet)
@@ -718,11 +862,7 @@ Sub Financiamiento()
 	 While nom=""
 	 	wait 1
 	 	nom=JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Pago Inmediato").JavaEdit("Nombre a Facturar BAR").GetROProperty("text")
-	 	
 	 Wend
-	 
-	
-
 	
 		Dim Iterator, Count
 		Dim rs
@@ -750,7 +890,7 @@ Sub Financiamiento()
 	JavaWindow("Ejecutivo de interacción").CaptureBitmap RutaEvidencias() &Num_Iter&"_"&"DetallePago"&".png" , True
 	imagenToWord "Detalle Pago", RutaEvidencias() &Num_Iter&"_"&"DetallePago"&".png"
 	JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Pago Inmediato").JavaButton("Enviar").Click
-	wait 5
+	wait 1
 		While ((JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Negociar Pago (Orden 1221256A").JavaButton("Siguiente >").Exist) Or (JavaWindow("Ejecutivo de interacción").JavaDialog("Problema").Exist)) = False
 			wait 1
 		Wend
@@ -847,7 +987,6 @@ Sub Financiamiento()
 		ExitActionIteration
 	End If
 End Sub
-
 Sub CodigoVendedor()
 	JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Resumen de la orden (Orden_2").JavaButton("Validar").Click
 	wait 1
@@ -882,7 +1021,6 @@ Sub CodigoVendedor()
 		textCodigo=JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Resumen de la orden (Orden_2").JavaEdit("Código de vendedor").GetROProperty  ("text")
 	Wend
 End Sub
-
 Sub GeneracionOrden()
 
 
@@ -895,13 +1033,10 @@ Sub GeneracionOrden()
 	
     If DataTable("e_WIC_Activa", dtLocalSheet) = "SI" Then
 				'RunAction "WIC2", oneIteration
-
 		Else 
-				
 				While JavaWindow("Ejecutivo de interacción").JavaDialog("Resumen de la orden (Orden").Exist = False
 				 	wait 1
 				Wend
-
 			 If JavaWindow("Ejecutivo de interacción").JavaDialog("Resumen de la orden (Orden").Exist= True Then
 			 	 	JavaWindow("Ejecutivo de interacción").CaptureBitmap RutaEvidencias() & "LinkDocu.png", True
 					imagenToWord "LinkDeDocumentación_"&Num_Iter,RutaEvidencias() & "LinkDocu.png"
@@ -909,14 +1044,11 @@ Sub GeneracionOrden()
 						wait 2
 					
 					 Dim var
-					 var = JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Resumen de la orden (Orden").JavaCheckBox("El cliente firmó.").GetROProperty("enabled")
+					 var = JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Resumen de la orden (Orden_2").JavaCheckBox("El cliente firmó.").GetROProperty("enabled")
 					If var = "1"  Then
-						JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Resumen de la orden (Orden").JavaCheckBox("El cliente firmó.").Set "ON"
+						JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Resumen de la orden (Orden_2").JavaCheckBox("El cliente firmó.").Set "ON"
 					End If
-					
 			End If
-
-			
 	End If
 
 '	
@@ -1120,7 +1252,7 @@ Sub PagoManual()
 			JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Buscar: Grupo de órdenes").JavaTab("Equipo usuario:").Select "Tareas pendientes del equipo"
 			wait 2
 		Loop While Not JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Buscar: Grupo de órdenes").JavaButton("Finalizar compra y activar").Exist
-		wait 3
+		wait 2
 	
 		JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Buscar: Grupo de órdenes").JavaEdit("TextFieldNative$1").SetFocus
 		JavaWindow("Ejecutivo de interacción").JavaInternalFrame("Buscar: Grupo de órdenes").JavaEdit("TextFieldNative$1").Set DataTable("s_Nro_Orden", dtLocalSheet)
@@ -1309,7 +1441,14 @@ Sub GestionLogistica()
 					
 						If str_tipoalta="Alta Nueva Equipo + SIM" Then
 								vardisp=JavaWindow("Ejecutivo de interacción").JavaDialog("Buscar: Orden > Solicitar").JavaTable("SearchJTable").GetCellData (1,1)
-								
+								Do
+									vardisp=JavaWindow("Ejecutivo de interacción").JavaDialog("Buscar: Orden > Solicitar").JavaTable("SearchJTable").GetCellData (1,1)
+									wait 3
+									If vardisp = "Tarjeta SIM" Then
+										Exit do 
+									End If
+								Loop While Not vardisp ="Dispositivo"
+					
 								If vardisp="Dispositivo" Then
 								
 									JavaWindow("Ejecutivo de interacción").JavaDialog("Buscar: Orden > Solicitar").JavaTable("SearchJTable").DoubleClickCell "#1","#4"
@@ -1640,3 +1779,4 @@ End Sub
 
 
 
+ @@ hightlight id_;_657904_;_script infofile_;_ZIP::ssf17.xml_;_
